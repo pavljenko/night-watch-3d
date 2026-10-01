@@ -1,0 +1,11 @@
+{
+  "name": "nightwatch-scene-build",
+  "private": true,
+  "description": "Сборка сцены «Ночной дозор» для страницы /blogs/tools/night_watch_3d: three.js 0.160.1 (как в артефакте) + загрузчики в один классический скрипт",
+  "dependencies": {
+    "three": "0.160.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.24.2"
+  }
+}
