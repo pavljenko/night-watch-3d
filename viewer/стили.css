@@ -1,0 +1,178 @@
+/* «Ночной дозор» в 3D — страница статьи /blogs/tools/night_watch_3d: шапка сайта и сцена на весь
+   оставшийся экран. Виджет стоит ТОЛЬКО в своём наборе этой статьи, поэтому правила страницы ниже
+   действуют лишь здесь. Нижняя панель телефона остаётся (решение владельца 01.10.2026). */
+
+/* ── страница: без крошек, заголовка, текста статьи, баннера и подвала; без прокрутки ── */
+.layout[class*="widget_v4_breadcrumbs"],
+.layout[class*="widget_v4_page_title"],
+.layout[class*="widget_v4_heading"],
+.layout[class*="widget_v4_article_1"],
+.layout[class*="system_widget_v4_delimeters"]:not(:has(.sp-nw)),
+.layout[class*="widget_v4_page_banner"],
+.layout[class*="widget_v4_footer_16"] { display: none !important; }
+html, html > body { overflow: hidden !important; overscroll-behavior: none; }
+.page_layout { min-height: 0 !important; }
+.layout[class*="widget_v4_header"] { position: relative; z-index: 3;
+  box-shadow: 0 1px 0 rgba(150, 227, 84, .10), 0 12px 32px -8px rgba(150, 227, 84, .11); }   /* как в Мастерской */
+.layout:has(.sp-nw) { padding: 0 !important; }
+.layout:has(.sp-nw) > .layout__content { max-width: none !important; padding: 0 !important; margin: 0 !important; }
+
+/* ── сцена ── */
+.sp-nw {
+  --accent: #96E354;     /* фирменный салатовый */
+  --night: #050505;      /* заливка узора, как у подвала и Мастерской */
+  --font: 'OnestLocal', 'Onest-fallback', Arial, sans-serif;
+  position: relative; z-index: 1; display: block; width: 100vw; margin-left: calc(50% - 50vw);
+  height: calc(100svh - 86px - var(--sp-mbar-h, 0px)); overflow: hidden;   /* точную высоту ставит скрипт */
+  background: #000; color: #F2F4EE; font: 16px/1.4 var(--font); -webkit-font-smoothing: antialiased;
+}
+.sp-nw *, .sp-nw *::before, .sp-nw *::after { box-sizing: border-box; }
+.sp-nw__h1 { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.sp-nw__stage { position: absolute; inset: 0; z-index: 0; }
+.sp-nw__stage canvas { display: block; width: 100%; height: 100%; outline: none; -webkit-tap-highlight-color: transparent; }
+.sp-nw__stage canvas.sp-nw__over { position: absolute; inset: 0; pointer-events: none; }   /* холст кристалла поверх сцены */
+
+/* ── загрузка: чёрный фон и фирменный узор (генератор — как у подвала и колеса Мастерской) ── */
+.sp-nw__loader { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; padding: 24px 20px;
+  background: var(--night); transition: opacity .6s ease; }
+.sp-nw__loader.is-done { opacity: 0; pointer-events: none; }
+.sp-nw__loader[hidden] { display: none; }
+.sp-nw__grid { position: absolute; inset: 0; width: 100%; height: 100%; stroke: var(--accent); opacity: .16; pointer-events: none; }
+.sp-nw__grid path { fill: none; stroke-width: .68; }
+.sp-nw__grid .gd { stroke-dasharray: 0 2; stroke-linecap: round; stroke-width: 1.06; }
+.sp-nw__grid .st path { fill: var(--night); stroke-linejoin: round; }
+/* мягкая подложка под текстом, чтобы узор не лез в цифры */
+.sp-nw__loader::before { content: ''; position: absolute; left: 50%; top: 50%; width: min(760px, 150vw); height: min(560px, 110vh);
+  transform: translate(-50%, -50%); background: radial-gradient(closest-side, rgba(5, 5, 5, .92), rgba(5, 5, 5, .7) 55%, rgba(5, 5, 5, 0)); pointer-events: none; }
+
+.sp-nw__card { position: relative; width: min(520px, 100%); }   /* 520: «Ночной дозор 3D» шрифтом сайта в одну строку */
+.sp-nw__title { margin: 0; font: 400 clamp(38px, 4.2vw, 58px)/1.06 var(--font); letter-spacing: -.025em; color: #fff; }
+.sp-nw__keep { white-space: nowrap; }
+.sp-nw__badge { display: inline-flex; align-items: center; justify-content: center; margin-left: .16em; padding: .02em .13em .04em;
+  border: .075em solid var(--accent); color: var(--accent); font-weight: 700; font-size: .78em; line-height: 1; letter-spacing: 0;
+  vertical-align: .06em; transform: perspective(320px) rotateX(4deg) rotateY(-4deg); }   /* та же плашка, что в колесе */
+.sp-nw__work { margin: 12px 0 30px; font: 400 15px/1.4 var(--font); color: rgba(255, 255, 255, .6); }
+.sp-nw__bar { position: relative; height: 3px; background: rgba(255, 255, 255, .14); overflow: hidden; }
+.sp-nw__fill { position: absolute; inset: 0; background: var(--accent); transform: scaleX(0); transform-origin: 0 50%; transition: transform .2s linear; }
+.sp-nw__nums { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: 14px;
+  font: 400 15px/1.2 var(--font); font-variant-numeric: tabular-nums; color: rgba(255, 255, 255, .8); }
+.sp-nw__nums b { font-weight: 500; color: #fff; }
+.sp-nw__pct { font-weight: 500; color: var(--accent); }
+.sp-nw__meta { display: flex; justify-content: space-between; gap: 6px 12px; flex-wrap: wrap; margin-top: 8px; min-height: 1.35em;
+  font: 400 13px/1.35 var(--font); font-variant-numeric: tabular-nums; color: rgba(255, 255, 255, .5); }
+.sp-nw__err { margin: 18px 0 0; font: 400 14px/1.5 var(--font); color: #ff9d8a; }
+.sp-nw.is-error .sp-nw__fill { background: #ff9d8a; }
+
+/* ── телефоны и планшеты: полупрозрачная надпись внизу по центру ── */
+.sp-nw__note { position: absolute; left: 50%; bottom: 14px; z-index: 3; transform: translateX(-50%); margin: 0;
+  font: 400 12px/1.2 var(--font); letter-spacing: .02em; color: rgba(255, 255, 255, .5); white-space: nowrap; pointer-events: none; }
+.sp-nw__note[hidden] { display: none; }
+.sp-nw__note { transition: opacity .2s ease; }
+.sp-nw.is-info .sp-nw__note { opacity: 0; }                 /* под плашкой надпись не нужна */
+
+/* ── кнопки по макету Figma «Frame 9»: стеклянные, 45 px, отступ 11 px; слева сверху ──
+   Свернуто — одна круглая кнопка со стрелкой; по нажатию выезжают «Оригинальный ракурс» и
+   «солнце», солнце раскрывает шкалу яркости без подложки, на месте солнца — «ОК».
+   Стекло из макета (Glass: свет −50° 80 %, преломление 100, глубина 100, дисперсия 70,
+   матовость 7): заливка #131313 25 %, размытие фона, блик по кромке; в Chromium на мышиных
+   устройствах — ещё и настоящее преломление с радужной кромкой (фильтры #spNwLG*). */
+.sp-nw__tools { position: absolute; left: 16px; top: 16px; z-index: 4; display: flex; align-items: center; gap: 11px; }
+.sp-nw__tools[hidden] { display: none; }
+.sp-nw__more { display: flex; align-items: center; gap: 11px; pointer-events: none; }
+.sp-nw__tools.is-open .sp-nw__more { pointer-events: auto; }
+.sp-nw__lg { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+.sp-nw__glass { position: relative; flex: none; display: grid; place-items: center; height: 45px; padding: 0; border: 0; border-radius: 999px;
+  background: radial-gradient(120% 120% at 28% 18%, rgba(255, 255, 255, .10), rgba(255, 255, 255, 0) 52%), rgba(19, 19, 19, .25);
+  -webkit-backdrop-filter: blur(7px) saturate(1.4); backdrop-filter: blur(7px) saturate(1.4);
+  color: #fff; font: 400 11px/1 var(--font); white-space: nowrap; cursor: pointer; -webkit-tap-highlight-color: transparent;
+  transition: transform .2s ease; }
+/* блик по кромке: свет сверху слева (−50°), 80 % */
+.sp-nw__glass::before { content: ''; position: absolute; inset: 0; padding: 1px; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(140deg, rgba(255, 255, 255, .8), rgba(255, 255, 255, .16) 32%, rgba(255, 255, 255, .04) 55%, rgba(255, 255, 255, .2) 82%, rgba(255, 255, 255, .5));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  transition: opacity .2s ease; opacity: .85; }
+.sp-nw__glass:hover::before { opacity: 1; }
+.sp-nw__glass:active { transform: scale(.95); }
+.sp-nw__glass:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.sp-nw__toggle, .sp-nw__sun { width: 45px; }
+.sp-nw__pill { width: 158px; overflow: hidden; }
+.sp-nw__tools.is-lg .sp-nw__toggle, .sp-nw__tools.is-lg .sp-nw__sun {
+  -webkit-backdrop-filter: url(#spNwLGc) blur(2px) saturate(1.4); backdrop-filter: url(#spNwLGc) blur(2px) saturate(1.4); }
+.sp-nw__tools.is-lg .sp-nw__pill {
+  -webkit-backdrop-filter: url(#spNwLGp) blur(2px) saturate(1.4); backdrop-filter: url(#spNwLGp) blur(2px) saturate(1.4); }
+
+/* стрелка: «>» — свернуто, разворачивается в «<» */
+.sp-nw__chev { width: 13px; height: 21px; fill: none; stroke: #fff; stroke-width: 1; transition: transform .45s cubic-bezier(0.22, 1, 0.36, 1); }
+.sp-nw__tools.is-open .sp-nw__chev { transform: rotate(180deg); }
+
+/* выезд кнопок */
+.sp-nw__pill, .sp-nw__sun { opacity: 0; transform: translateX(-16px) scale(.94);
+  transition: opacity .28s ease, transform .45s cubic-bezier(0.22, 1, 0.36, 1), width .4s cubic-bezier(0.22, 1, 0.36, 1), margin .4s cubic-bezier(0.22, 1, 0.36, 1); }
+.sp-nw__tools.is-open .sp-nw__pill, .sp-nw__tools.is-open .sp-nw__sun { opacity: 1; transform: none; }
+.sp-nw__tools.is-open .sp-nw__sun { transition-delay: 0s, .05s, 0s, 0s; }
+
+/* солнце ↔ «ОК» */
+.sp-nw__sun-ico { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 1;
+  transition: opacity .25s ease, transform .4s cubic-bezier(0.22, 1, 0.36, 1); }
+.sp-nw__ok-txt { position: absolute; inset: 0; display: grid; place-items: center; font: 500 11px/1 var(--font); letter-spacing: .06em;
+  opacity: 0; transform: scale(.7); transition: opacity .25s ease, transform .4s cubic-bezier(0.22, 1, 0.36, 1); }
+.sp-nw__tools.is-light .sp-nw__sun-ico { opacity: 0; transform: rotate(60deg) scale(.5); }
+.sp-nw__tools.is-light .sp-nw__ok-txt { opacity: 1; transform: none; }
+
+/* шкала яркости — без подложки; середина отмечена, к ней ползунок примагничивается */
+.sp-nw__range { position: relative; flex: none; display: flex; align-items: center; width: 0; height: 45px; margin-left: -11px; overflow: hidden; opacity: 0;
+  transition: width .45s cubic-bezier(0.22, 1, 0.36, 1), margin .45s cubic-bezier(0.22, 1, 0.36, 1), opacity .25s ease; }
+.sp-nw__tools.is-light .sp-nw__range { width: 200px; margin-left: 0; opacity: 1; }
+.sp-nw__range::after { content: ''; position: absolute; left: 50%; top: 16px; bottom: 16px; width: 1px; margin-left: -.5px;
+  background: rgba(255, 255, 255, .75); pointer-events: none; }
+.sp-nw__range input { -webkit-appearance: none; appearance: none; width: 100%; height: 45px; margin: 0; background: transparent; cursor: pointer; }
+.sp-nw__range input:focus-visible { outline: none; }
+.sp-nw__range input::-webkit-slider-runnable-track { height: 1px; border-radius: 1px;
+  background: linear-gradient(to right, #fff var(--v, 50%), rgba(255, 255, 255, .35) var(--v, 50%)); }
+.sp-nw__range input::-webkit-slider-thumb { -webkit-appearance: none; width: 15px; height: 15px; margin-top: -7px; border: 0; border-radius: 50%;
+  background: #fff; box-shadow: 0 0 0 5px rgba(255, 255, 255, .14); }
+.sp-nw__range input:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px var(--accent); }
+.sp-nw__range input::-moz-range-track { height: 1px; background: rgba(255, 255, 255, .35); }
+.sp-nw__range input::-moz-range-progress { height: 1px; background: #fff; }
+.sp-nw__range input::-moz-range-thumb { width: 15px; height: 15px; border: 0; border-radius: 50%; background: #fff; box-shadow: 0 0 0 5px rgba(255, 255, 255, .14); }
+
+/* узкий экран: пока открыта шкала, «Оригинальный ракурс» уступает ей место */
+@media (max-width: 560px) {
+  .sp-nw__tools.is-light .sp-nw__pill { width: 0; margin-right: -11px; opacity: 0; pointer-events: none; }
+  .sp-nw__tools.is-light .sp-nw__range { width: min(200px, calc(100vw - 32px - 45px - 45px - 22px)); }
+}
+
+/* ── плашка о персонаже: снизу по центру, скругление 2px, без ярлыков над именем ── */
+.sp-nw__info { position: absolute; left: 50%; bottom: 16px; z-index: 4; width: min(560px, calc(100% - 32px)); max-height: min(30%, 210px);   /* компактно: фигуры внизу кадра не закрывать */
+  display: flex; flex-direction: column; padding: 18px 22px 16px; border: 1px solid rgba(255, 255, 255, .14); border-radius: 2px;
+  background: rgba(5, 5, 5, .9); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); color: #F2F4EE;
+  opacity: 0; transform: translate(-50%, 10px); transition: opacity .22s ease, transform .26s cubic-bezier(0.22, 1, 0.36, 1); }
+.sp-nw__info.is-open { opacity: 1; transform: translate(-50%, 0); }
+.sp-nw__info[hidden] { display: none; }
+.sp-nw__close { position: absolute; top: 8px; right: 8px; width: 36px; height: 36px; display: grid; place-items: center; padding: 0;
+  border: 0; border-radius: 2px; background: none; color: rgba(255, 255, 255, .6); cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.sp-nw__close:hover { color: #fff; }
+.sp-nw__close:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
+.sp-nw__close svg { width: 14px; height: 14px; }
+.sp-nw__name { margin: 0 36px 0 0; font: 500 20px/1.25 var(--font); color: #fff; }
+.sp-nw__orig { margin: 4px 36px 0 0; font: 400 13px/1.4 var(--font); color: rgba(255, 255, 255, .55); }
+.sp-nw__orig[hidden] { display: none; }
+.sp-nw__bio { margin-top: 12px; min-height: 0; overflow-y: auto; overscroll-behavior: contain; font: 400 15px/1.5 var(--font);
+  color: rgba(255, 255, 255, .82); scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, .25) transparent; }
+.sp-nw__bio p { margin: 0 0 .7em; }
+.sp-nw__bio p:last-child { margin-bottom: 0; }
+.sp-nw__bio.is-more { -webkit-mask-image: linear-gradient(#000 calc(100% - 36px), transparent); mask-image: linear-gradient(#000 calc(100% - 36px), transparent); }
+.sp-nw__src { font-size: 13px; color: rgba(255, 255, 255, .5); }
+.sp-nw__src a { color: inherit; text-decoration: underline; text-decoration-color: rgba(150, 227, 84, .5); text-underline-offset: 2px; }
+.sp-nw__src a:hover { color: var(--accent); }
+
+@media (max-width: 767px) {
+  .sp-nw__title { font-size: clamp(34px, 10vw, 44px); }
+  .sp-nw__work { margin-bottom: 26px; }
+  .sp-nw__info { bottom: 10px; width: calc(100% - 20px); max-height: 40%; padding: 14px 16px 12px; }
+  .sp-nw__name { font-size: 18px; }
+  .sp-nw__bio { font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { .sp-nw__loader, .sp-nw__fill, .sp-nw__info, .sp-nw__note, .sp-nw__pill, .sp-nw__sun, .sp-nw__range, .sp-nw__chev, .sp-nw__sun-ico, .sp-nw__ok-txt { transition: none; } }

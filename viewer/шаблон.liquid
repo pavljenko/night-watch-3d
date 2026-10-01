@@ -1,0 +1,46 @@
+{%- comment -%}
+  «Ночной дозор» в 3D — сцена во весь экран под шапкой (страница /blogs/tools/night_watch_3d).
+  Исходники и сборка: «Мой сайт/мастерская/ночной-дозор/» (python3 сборка.py → content.liquid).
+  Код сцены — отдельный файл в «Файлах» сайта, здесь только разметка, стили и запуск.
+{%- endcomment -%}
+{%- assign nw_en = false -%}{%- if language.locale == 'en' -%}{%- assign nw_en = true -%}{%- endif -%}
+<style>@@CSS@@</style>
+<section class="sp-nw" data-sp-nw data-lang="{% if nw_en %}en{% else %}ru{% endif %}">
+  <h1 class="sp-nw__h1">{% if nw_en %}The Night Watch in 3D{% else %}Ночной дозор в 3D{% endif %}</h1>
+  <div class="sp-nw__stage" role="img" aria-label="{% if nw_en %}Three-dimensional scene after Rembrandt’s painting The Night Watch{% else %}Трёхмерная сцена по картине Рембрандта «Ночной дозор»{% endif %}"></div>
+  <div class="sp-nw__loader">
+    <svg class="sp-nw__grid" aria-hidden="true" focusable="false"></svg>
+    <div class="sp-nw__card">
+      <p class="sp-nw__title" aria-hidden="true">{% if nw_en %}The Night <span class="sp-nw__keep">Watch<span class="sp-nw__badge">3D</span></span>{% else %}Ночной <span class="sp-nw__keep">дозор<span class="sp-nw__badge">3D</span></span>{% endif %}</p>
+      <p class="sp-nw__work">{% if nw_en %}Rembrandt van Rijn, 1642{% else %}Рембрандт ван Рейн, 1642{% endif %}</p>
+      <div class="sp-nw__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="{% if nw_en %}Loaded{% else %}Загружено{% endif %}"><i class="sp-nw__fill"></i></div>
+      <div class="sp-nw__nums"><span><b data-nw="done">0{% if nw_en %}.{% else %},{% endif %}0</b> {% if nw_en %}of{% else %}из{% endif %} <span data-nw="total">—</span> {% if nw_en %}MB{% else %}МБ{% endif %}</span><span class="sp-nw__pct" data-nw="pct">0%</span></div>
+      <div class="sp-nw__meta"><span data-nw="step"></span><span data-nw="speed"></span></div>
+      <p class="sp-nw__err" role="alert" hidden></p>
+    </div>
+  </div>
+  <div class="sp-nw__tools" hidden>
+    <button type="button" class="sp-nw__glass sp-nw__toggle" aria-expanded="false" aria-controls="sp-nw-more" aria-label="{% if nw_en %}Scene controls{% else %}Управление сценой{% endif %}"><svg class="sp-nw__chev" viewBox="0 0 13 21" aria-hidden="true" focusable="false"><path d="M1 1l11 9.5L1 20"/></svg></button>
+    <div class="sp-nw__more" id="sp-nw-more">
+      <button type="button" class="sp-nw__glass sp-nw__pill" data-nw-tool="view" tabindex="-1">{% if nw_en %}Original view{% else %}Оригинальный ракурс{% endif %}</button>
+      <button type="button" class="sp-nw__glass sp-nw__sun" data-nw-tool="light" tabindex="-1" aria-expanded="false" aria-label="{% if nw_en %}Change lighting{% else %}Изменить освещение{% endif %}" data-ok="{% if nw_en %}Save lighting{% else %}Сохранить освещение{% endif %}"><svg class="sp-nw__sun-ico" viewBox="0 0 22 22" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="3.5"/><path d="M11 0v4.72M11 17.28V22M0 11h4.72M17.28 11H22M3.22 3.22l3.33 3.33M15.45 15.45l3.33 3.33M3.22 18.78l3.33-3.33M15.45 6.55l3.33-3.33"/></svg><span class="sp-nw__ok-txt" aria-hidden="true">{% if nw_en %}OK{% else %}ОК{% endif %}</span></button>
+      <span class="sp-nw__range"><input type="range" min="0" max="100" step="1" value="50" tabindex="-1" aria-label="{% if nw_en %}Brightness of the backdrop spotlights{% else %}Яркость прожекторов фона{% endif %}"></span>
+    </div>
+    <svg class="sp-nw__lg" width="0" height="0" aria-hidden="true" focusable="false">
+      <filter id="spNwLGc" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">@@LG_CIRCLE@@</filter>
+      <filter id="spNwLGp" x="-6%" y="-10%" width="112%" height="120%" color-interpolation-filters="sRGB">@@LG_PILL@@</filter>
+    </svg>
+  </div>
+  <div class="sp-nw__info" role="region" aria-live="polite" aria-label="{% if nw_en %}About the figure{% else %}О персонаже{% endif %}" hidden>
+    <button class="sp-nw__close" type="button" aria-label="{% if nw_en %}Close{% else %}Закрыть{% endif %}"><svg viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M1 1l12 12M13 1L1 13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>
+    <p class="sp-nw__name"></p>
+    <p class="sp-nw__orig" hidden></p>
+    <div class="sp-nw__bio"></div>
+  </div>
+  <p class="sp-nw__note" hidden>{% if nw_en %}Simplified mobile version{% else %}Упрощённая мобильная версия{% endif %}</p>
+  <noscript><p class="sp-nw__err">{% if nw_en %}The 3D scene needs JavaScript.{% else %}Для трёхмерной сцены нужен JavaScript.{% endif %}</p></noscript>
+  <script type="application/json" data-sp-nw-config>@@CONFIG@@</script>
+  <script type="application/json" data-sp-nw-persons>{% if nw_en %}@@PERSONS_EN@@{% else %}@@PERSONS_RU@@{% endif %}</script>
+</section>
+<script>@@BOOT@@</script>
+<script src="@@BUNDLE@@" defer onerror="window.spNwFail && window.spNwFail()"></script>
