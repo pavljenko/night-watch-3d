@@ -4,6 +4,8 @@ A browser reproduction of Rembrandt's *The Night Watch* (1642), and notes on how
 
 **[Open the scene →](https://pavljenko.ru/blogs/tools/night_watch_3d?lang=en)** · [Lieutenant demo](https://pavljenko.github.io/night-watch-3d/demo/) · [Captain (STL)](models/captain_frans_banninck_cocq_100k.stl) · [Русская версия](README.ru.md)
 
+**Made with:** Tripo AI (3D models of the figures) · GPT 2.5 and Nano Banana 2 (views of each figure for the generation) · Blender (scene assembly) · Rhino (small details) · three.js (viewer) · Claude (code and research)
+
 ![The scene from the painting's viewpoint](images/scene_overview.jpg)
 
 ## What this is
@@ -54,11 +56,11 @@ The other figures stay on the website. The full-resolution source scene is not p
 
 | Stage | Tools |
 |---|---|
-| Reference views of each figure before 3D generation | Nano Banana 2, GPT image generation (paid accounts) |
-| Image-to-3D for figures, background, props | Tripo AI (paid account) |
-| Manual corrections | Rhino 8, Blender 4.3 |
-| Scene assembly, lighting, camera matched to the painting | Blender 4.3 (Cycles, light linking) |
-| Compression scripts, web viewer, research for the cards | written with Claude (Anthropic) |
+| 3D models of the figures, the background and the props | **Tripo AI** (paid account) |
+| Views of each figure prepared for the 3D generation | **GPT 2.5** and **Nano Banana 2** (paid accounts) |
+| Scene assembly, lighting, camera matched to the painting | **Blender** 4.3 (Cycles, light linking) |
+| Correcting small details of the models | **Rhino** 8 |
+| Compression scripts, web viewer, research for the cards | written with **Claude** (Anthropic) |
 | Viewer | three.js r160 (WebGLRenderer), esbuild |
 | Hosting | the file storage and CDN of my website (InSales) |
 

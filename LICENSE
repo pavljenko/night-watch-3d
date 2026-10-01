@@ -9,8 +9,9 @@ REUSE.toml lists which licence covers which file.
 
 Copyright (c) 2026 Sasha Pavljenko.
 
-The meshes and textures were generated with AI tools (Tripo AI, Nano Banana 2, GPT image
-generation) and corrected by hand. Purely AI-generated parts may not be protected by
-copyright in some jurisdictions; the licences apply to the human-made contributions.
+The 3D models were generated with Tripo AI from views prepared with GPT 2.5 and
+Nano Banana 2, assembled in Blender, and their small details were corrected in
+Rhino. Purely AI-generated parts may not be protected by copyright in some
+jurisdictions; the licences apply to the human-made contributions.
 Personality rights of the people depicted are not licensed (CC BY-SA 4.0, section 2(b)(1)).
 Rembrandt's painting is in the public domain.
