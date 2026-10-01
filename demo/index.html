@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lieutenant — Night Watch 3D</title>
+<meta name="description" content="Lieutenant Willem van Ruytenburch from a browser 3D reproduction of Rembrandt's The Night Watch: 200k triangles, 2560 px texture.">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.3.1/dist/model-viewer.min.js"></script>
+<style>
+  :root { --bg: #111; --fg: #e8e4dc; --muted: #9a958c; --accent: #96e354; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg);
+    font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { display: flex; flex-direction: column; height: 100%; }
+  model-viewer { flex: 1; width: 100%; min-height: 60vh; background: radial-gradient(ellipse at 50% 40%, #2a2724 0%, #111 70%);
+    --poster-color: transparent; }
+  footer { padding: 14px 16px 18px; max-width: 900px; width: 100%; margin: 0 auto; }
+  h1 { font-size: 18px; margin: 0 0 4px; font-weight: 600; }
+  p { margin: 0 0 6px; color: var(--muted); }
+  a { color: var(--accent); }
+  .lang { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <model-viewer
+    src="../models/lieutenant_willem_van_ruytenburch.glb"
+    alt="3D model of Lieutenant Willem van Ruytenburch from Rembrandt's The Night Watch"
+    camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="1500" rotation-per-second="18deg"
+    camera-orbit="30deg 80deg auto" shadow-intensity="0.8" exposure="1.05" environment-image="neutral">
+  </model-viewer>
+  <footer>
+    <h1>Lieutenant Willem van Ruytenburch</h1>
+    <p>One figure from a browser 3D reproduction of Rembrandt's <i>The Night Watch</i> (1642): 200,000 triangles, Draco geometry, 2560 px texture, 1.7 MB.
+       Drag to rotate, scroll or pinch to zoom.</p>
+    <p>The whole scene: <a href="https://pavljenko.ru/blogs/tools/night_watch_3d?lang=en">pavljenko.ru/blogs/tools/night_watch_3d</a> ·
+       Repository: <a href="https://github.com/pavljenko/night-watch-3d">GitHub</a> · Model: CC BY-SA 4.0, Sasha Pavljenko</p>
+    <p class="lang">Лейтенант Виллем ван Рёйтенбюрх — одна фигура из 3D-репродукции «Ночного дозора». Вся сцена — по ссылке выше.</p>
+  </footer>
+</main>
+</body>
+</html>
