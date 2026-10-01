@@ -1,0 +1,16 @@
+version = 1
+SPDX-PackageName = "night-watch-3d"
+SPDX-PackageSupplier = "Sasha Pavljenko"
+SPDX-PackageDownloadLocation = "https://github.com/pavljenko/night-watch-3d"
+
+[[annotations]]
+path = ["viewer/**/*.js", "viewer/**/*.py", "viewer/**/*.liquid", "viewer/**/*.css", "viewer/сборка/package*.json", "viewer/файлы-на-сайте.json", "pipeline/**", "demo/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Sasha Pavljenko"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["models/**", "images/**", "viewer/данные/**", "README.md", "README.ru.md", "viewer/README.md", "pipeline/README.md"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Sasha Pavljenko"
+SPDX-License-Identifier = "CC-BY-SA-4.0"

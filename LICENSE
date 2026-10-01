@@ -1,0 +1,16 @@
+This repository uses two licences.
+
+Code (viewer/*.js, *.py, *.liquid, *.css, pipeline/, demo/): MIT — see LICENSES/MIT.txt.
+Models, textures, character cards, texts and images (models/, images/, viewer/данные/,
+README files): Creative Commons Attribution-ShareAlike 4.0 International — see
+LICENSES/CC-BY-SA-4.0.txt.
+
+REUSE.toml lists which licence covers which file.
+
+Copyright (c) 2026 Sasha Pavljenko.
+
+The meshes and textures were generated with AI tools (Tripo AI, Nano Banana 2, GPT image
+generation) and corrected by hand. Purely AI-generated parts may not be protected by
+copyright in some jurisdictions; the licences apply to the human-made contributions.
+Personality rights of the people depicted are not licensed (CC BY-SA 4.0, section 2(b)(1)).
+Rembrandt's painting is in the public domain.
