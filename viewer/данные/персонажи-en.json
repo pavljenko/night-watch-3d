@@ -1,0 +1,451 @@
+{
+ "_о_файле": "English version of персонажи.json: characters of The Night Watch for the info panel on the page /blogs/tools/night_watch_3d. The key is the model name in the scene (same keys as in персонажи.json, not translated). Source of the Russian text: the previous web build “ночной дозор/сцена/сборка/web/index.html” (28.09.2026, block <script id=\"persons\">). Fields: name, original, years, text, rembrandt, sources; sources are unchanged.",
+ "_модели": {
+  "tripo_mesh_bb758565_2af2_46cc_a3c3_d8a3d9d2329d": "Оккерсен",
+  "tripo_mesh_91ef6615_ab0d_42b0_b4b4_5f6c09542883": "Галина Антоновна",
+  "tripo_mesh_6aad6bbc_8667_4964_9a32_179bd034b078": "Чипулька",
+  "tripo_mesh_71b8275f_902c_447d_ae9b_40931736c0df": "Царевна",
+  "tripo_mesh_3b376f71_5520_4728_bbd4_139c8d9c5283": "Андрей",
+  "tripo_mesh_56739500_0c6f_4dbb_84af_9085f122e9f6": "Кошка с собакой",
+  "tripo_mesh_eda4a5e7_fccb_4bfc_ad32_8284344a9e66.001": "Кошка с собакой",
+  "tripo_mesh_eda4a5e7_fccb_4bfc_ad32_8284344a9e66.002": "Кошка с собакой",
+  "tripo_mesh_eda4a5e7_fccb_4bfc_ad32_8284344a9e66": "Алла",
+  "tripo_mesh_abadd87f_dd4a_4f38_b0c2_adc6d7de80ca": "Рембрандт",
+  "tripo_mesh_8de1fc83_2d14_4389_935a_323d30724808": "Тотошка",
+  "tripo_mesh_67259b69_695e_4bcf_9f4a_dee6aa3dfd99": "я",
+  "tripo_mesh_9ca31ffb_b0af_454c_8f73_d02f0decbe4c": "Девочка в голубом",
+  "tripo_mesh_b7396775_fe9c_4c89_bb99_9cd4a7f90358": "Статист 2"
+ },
+ "персонажи": {
+  "Капитан": {
+   "name": "Frans Banninck Cocq",
+   "original": "Frans Banninck Cocq",
+   "years": "1605–1655",
+   "text": "Frans Banninck Cocq (1605–1655) was an Amsterdam lawyer and regent, captain of the militia company of District II and the central figure of The Night Watch. The son of an immigrant apothecary from Bremen, he studied law in Poitiers and Bourges; in 1630 he married Maria Overlander, the daughter of an extremely wealthy burgomaster, and inherited from his father-in-law the title of Lord of Purmerland and Ilpendam, Ilpenstein Castle and the house “De Dolphijn” on the Singel, where he was living when the painting was made. From 1634 he was a member of the city council, seven times a schepen, and burgomaster of Amsterdam in 1650, 1651, 1653 and 1654; in 1648 Louis XIV admitted him to the Order of Saint Michael. In the civic militia he rose from lieutenant of District I (1635) to captain of the company of District II (c. 1635–1646) and colonel (c. 1646–1650). In the painting he is dressed in black, with the red sash of his rank and a cane, and with a gesture of his hand orders the lieutenant to lead the company; his family album records it in exactly these words: “the young Lord of Purmerland, as captain, gives the order to his lieutenant, the Lord of Vlaardingen, to march the company of citizens”. The painting was commissioned around 1639 by him and seventeen of his militiamen; the rank and file paid about 100 guilders each, and the officers, by the estimate of the historian Dudok van Heel, about 500. He died on 1 January 1655 and was buried in the Oude Kerk.",
+   "rembrandt": "His connection with Rembrandt is documented only through the commission: around 1639 Banninck Cocq, together with seventeen militiamen, commissioned from him a group portrait, completed in 1642, and, by Dudok van Heel’s estimate, paid about 500 guilders — five times as much as a rank-and-file militiaman. Rembrandt himself never belonged to the civic militia. The sources used contain no information about any personal acquaintance beyond this commission.",
+   "sources": [
+    "https://nl.wikipedia.org/wiki/Frans_Banninck_Cocq",
+    "https://en.wikipedia.org/wiki/Frans_Banninck_Cocq",
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht",
+    "https://en.wikipedia.org/wiki/The_Night_Watch",
+    "https://onsamsterdam.nl/artikelen/thuis-bij-de-mannen-op-de-nachtwacht"
+   ]
+  },
+  "Лейтенант": {
+   "name": "Willem van Ruytenburch",
+   "original": "Willem van Ruytenburch",
+   "years": "1600–1652",
+   "text": "Willem van Ruytenburch (baptised 13 August 1600, Amsterdam – 1652, The Hague or Vlaardingen) was an Amsterdam lawyer, Lord of Vlaardingen and Vlaardingen-Ambacht. He was the son of Pieter Gerritsz, a merchant who had grown rich in the spice trade; his father bought the lordship in 1611 for 26,000 guilders, and the son inherited it in 1627. He lived in the “Blue House” at Keizersgracht 196–198; in 1631 his fortune was estimated at 94,000 guilders; he was a member of the city council (1639–1652) and a schepen (1641). In the company of District II he was lieutenant, second in command to Captain Frans Banninck Cocq; in the painting he is the “man in yellow”, in a suede costume with a white sash and a partisan, with which he points out the direction of the march, while the shadow of the captain’s hand falls on the Amsterdam coat of arms on his doublet. He was not a nobleman: in 1632 he persuaded an elderly woman to swear falsely in court that his ancestors were Brabant nobles. In 1647 he left Amsterdam for good, first for The Hague and then for Vlaardingen; he was buried in the family vault in the Grote Kerk.",
+   "rembrandt": "The only documented connection with Rembrandt is the commission itself: in 1642 the artist painted him in The Night Watch (Ecartico: “portrayed by Rembrandt Harmensz. van Rijn, 1642”). By the estimate of the historian Dudok van Heel, Banninck Cocq and van Ruytenburch paid about 500 guilders each instead of the usual 100 (nl.wikipedia “De Nachtwacht”). The sources used contain no information about any personal acquaintance with Rembrandt beyond the commission itself.",
+   "sources": [
+    "https://nl.wikipedia.org/wiki/Willem_van_Ruytenburch",
+    "https://en.wikipedia.org/wiki/Willem_van_Ruytenburch",
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht",
+    "https://en.wikipedia.org/wiki/The_Night_Watch",
+    "https://onsamsterdam.nl/artikelen/thuis-bij-de-mannen-op-de-nachtwacht"
+   ]
+  },
+  "Знаменосец": {
+   "name": "Jan Visscher Cornelisen",
+   "original": "Jan Visscher Cornelisen (Jan Corneliszn Visscher)",
+   "years": "1610–1650",
+   "text": "Jan Visscher Cornelisen (1610–1650) was an Amsterdam merchant and the ensign (standard-bearer) of the company of District II from 1637 to 1650. He was baptised in the Nieuwe Kerk on 22 June 1610 and buried in the choir of the Oude Kerk on 29 July 1650. He lost his father early and grew up as an only child in his grandmother’s house; he apparently lived all his life on the Nieuwezijds Achterburgwal, by the Molsteeg. An ensign was expected to be a well-to-do bachelor: he took up the post in the autumn of 1637 and remained unmarried until his death. He was an educated and inquisitive man: his house held more than fifty paintings, a large library inherited from a Mennonite uncle, sheet music and a portfolio of drawings. In the painting he stands at the upper left, in full light, with the company’s unfurled banner; on either side of him are the shield-bearers, whose duty was to guard the ensign and the banner. Soon after his death the poet Jan Vos wrote verses on his portrait, calling him “of Bicker blood”; in 1654 the ensign’s mother was entered in the burial register as a relative of the Bickers, Frans Banninck Cocq and Cornelis de Graeff.",
+   "rembrandt": "The sources contain no information about any personal acquaintance with Rembrandt. The only documented connection is the portrait itself in The Night Watch. According to Dudok van Heel, the inventory of his mother’s possessions (1654) contains no portrait of her son, so Jan Vos’s verses “on the portrait” of the ensign most probably refer to his figure in Rembrandt’s painting.",
+   "sources": [
+    "https://bulletin.rijksmuseum.nl/article/download/11665/13205",
+    "https://bulletin.rijksmuseum.nl/article/view/11665",
+    "https://beleefdenachtwacht.nl/thema/wie-is-wie/jan-visscher-cornelisen",
+    "https://www.rijksmuseum.nl/nl/collectie/SK-C-5",
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht"
+   ]
+  },
+  "Ван дер Хеде": {
+   "name": "Jan van der Heede",
+   "original": "Jan Aertszn van der Heede",
+   "years": "1610–1655",
+   "text": "Jan van der Heede (full name Jan Aertszn van der Heede; 1610, Driebruggen – buried 11 May 1655 in the Oude Kerk, Amsterdam) was a merchant who dealt in groceries. In 1635 he and Gijsbert Lambertszn Schouten each invested 8,000 guilders in a grocery business; for eight years the partners lived and traded in a shared house on the Zoutsteeg, and when the contract was not renewed he carried on the business on his own. Of the eighteen men in the painting he was the only Remonstrant. He served as a musketeer in the company of District II; on the canvas he stands at the left in the foreground, dressed in red, pouring powder into his musket — together with two other musketeers he demonstrates the drill from Jacob de Gheyn’s manual of arms (1607). In 1642 he was still unmarried, and bright red clothing befitted a bachelor; he married a year after the painting was completed. He was identified in the painting by the historian Bas Dudok van Heel (the study was published in 2009); his name, “Jan vander heede”, is on the shield with the names of those who paid to be portrayed.",
+   "rembrandt": "The sources contain no information about any personal acquaintance with Rembrandt. The only documented connection is the portrait itself: the Ecartico database records his relationship with Rembrandt only as “portrayed by Rembrandt Harmensz. van Rijn, 1642”; like the other members of the company, he paid for his place in the painting (according to the 1659 notarial statement of Jan Pietersen Bronckhorst, about 100 guilders per person).",
+   "sources": [
+    "https://nl.wikipedia.org/wiki/Jan_van_der_Heede",
+    "https://www.vondel.humanities.uva.nl/ecartico/persons/58668",
+    "https://onsamsterdam.nl/artikelen/thuis-bij-de-mannen-op-de-nachtwacht",
+    "https://beleefdenachtwacht.nl/thema/wie-is-wie/jan-van-der-heede",
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht"
+   ]
+  },
+  "Мушкетер": {
+   "name": "Jan Claesen Leijdeckers",
+   "original": "Jan Claesen Leijdeckers (Jan Claesz. Leijdeckers; on the cartouche: Jan Clasen Leydeckers)",
+   "years": "1597–1640",
+   "text": "Jan Claesen Leijdeckers (1597–1640) was an Amsterdam merchant and shopkeeper: he was baptised in the Oude Kerk on 20 May 1597 and buried in the Nieuwe Kerk on 27 December 1640. The son of the shoemaker Claes Garbrandtsz, he married Maria Pieters in 1622 and lived in a rented house, “De Gilde Cam”, on the Damrak, opposite the Papenbrug. The archives do not say exactly what he traded in; Dudok van Heel considers it possible that, like his elder brother Willem, he was a cloth merchant. In Banninck Cocq’s company he was listed as a musketeer; in the painting he is the figure behind the lieutenant blowing on the pan of his musket — the only militiaman who is not looking at anyone. He often borrowed money; in December 1640 he fell ill, made his will on 20 December and died a week later, and on 30 December his widow, left with two children, surrendered the entire stock of the shop and all their property against his debts; she herself died in April 1641. Since he died two years before The Night Watch was completed, his portrait was apparently painted not from life but after an engraving by Jacob de Gheyn in the “Wapenhandelinghe” (1608); from the date of his death researchers conclude that Rembrandt was already working on the painting in 1640.",
+   "rembrandt": "The sources contain no information about any personal acquaintance with Rembrandt. According to Dudok van Heel, his portrait was apparently conceived after an engraving by Jacob de Gheyn (1608) rather than painted from life: by the time the painting was completed (1642), Leijdeckers had been dead for two years. The only documented link with Rembrandt’s circle is a family one: his nephew, the painter Gerbrand van den Eeckhout, was Rembrandt’s pupil from about 1636 to 1640.",
+   "sources": [
+    "https://bulletin.rijksmuseum.nl/article/view/11665",
+    "https://bulletin.rijksmuseum.nl/article/download/11665/13205/23790",
+    "https://ecartico.org/persons/54865",
+    "https://ecartico.org/persons/2720",
+    "https://ecartico.org/persons/9393"
+   ]
+  },
+  "Стрелок": {
+   "name": "The militiaman in the oak-leaf helmet",
+   "original": "De vurende musketier met de bladerhelm / «Onbekende man»",
+   "years": "—",
+   "text": "The small figure behind the captain is the only militiaman in the painting pulling the trigger; the puff of smoke from the shot, still clearly visible in the Lundens copy, has almost worn away on the original. The pose is taken from Jacob de Gheyn’s manual “Wapenhandelinghe” (1607); firing while the company was marching out was forbidden, so the scene makes no claim to realism. His baggy breeches and helmet are the fashions of the 1590s, not the 1640s; his face is not visible, so the Rembrandt Research Project regards him not as a portrait but as a personification of musketry. Oak leaves like those on his helmet have been associated with glory and victory since antiquity; claws and oak leaves decorated the silver badge of the Kloveniers’ best marksman. His doublet is painted in smalt with red lake: the lit part is bluish lilac, while the shaded part, now brown, was originally dark purple.",
+   "rembrandt": "The figure is anonymous; the sources contain no information about a model or about any acquaintance with Rembrandt.",
+   "sources": [
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht",
+    "https://www.beleefdenachtwacht.nl/thema/geheimen/onbekende-man",
+    "https://www.rembrandtsmoney.com/rm24018-the-night-watch-the-commission/",
+    "https://www.rijksmuseum.nl/nl/stories/operatie-nachtwacht/story/smalt-gebruikt-voor-paars",
+    "https://de.wikipedia.org/wiki/Die_Nachtwache"
+   ]
+  },
+  "Девочка": {
+   "name": "The girl with the chicken",
+   "original": "Meisje met de dode kip / «Girl in gold and blue» (Dudok van Heel)",
+   "years": "—",
+   "text": "A girl in an old-fashioned golden-yellow dress stands on the left behind the captain, in the brightest patch of light; behind her a second girl, dressed in blue, is almost hidden. From her belt hang a powder bag, a pistol and a dead chicken with its feet in the air: the claws allude to the nickname “klauweniers” by which the Kloveniers were known, and a claw was the company’s emblem. The Rijksmuseum calls her the militiamen’s mascot; the Rembrandt Research Project likewise sees the chicken’s feet as an allusion to the claw in the emblem. The girl’s identity has not been established: according to one theory she resembles Saskia, Rembrandt’s wife; according to others she is an angel, or these are the daughters of Jacob Nachtglas, the keeper of the Kloveniersdoelen. Dudok van Heel considered the latter theory doubtful on grounds of age, and the Rijksmuseum website regards the girl as a fictional symbol of the company. The signature “Rembrandt f 1642” is on the front edge of the bottom step, beneath her right foot.",
+   "rembrandt": "The figure has not been identified. Museum sources regard the girl as a fictional mascot of the company; a resemblance to Saskia van Uylenburgh is mentioned only as a conjecture. The only documented connection with Rembrandt concerns a rejected theory: Dudok van Heel notes that Rembrandt, as a guest at the Kloveniersdoelen, must surely have known Geertruyt Nachtglas well, and after his bankruptcy he made a sketch on the back of the funeral notice of her sister Aechtje.",
+   "sources": [
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht",
+    "https://www.rijksmuseum.nl/nl/collectie/SK-C-5",
+    "https://artsandculture.google.com/story/the-night-watch-rijksmuseum/FAXRivMco4xIJA?hl=en",
+    "https://www.beleefdenachtwacht.nl/thema/geheimen/meisje",
+    "https://www.beleefdenachtwacht.nl/thema/wie-is-wie/de-meisjes"
+   ]
+  },
+  "Кейсер": {
+   "name": "Jan Adriaensen Keijser",
+   "original": "Jan Adriaensen Keijser (Ecartico: Jan Adriaensz. de Keijser; on the cartouche: Jan Adriaensen Keyser)",
+   "years": "1594–1664",
+   "text": "Jan Adriaensen Keijser (1594–1664) was an Amsterdam wine merchant. He was baptised on 4 December 1594 in the Oude Kerk, the son of a stonemason from Ghent; from 1615 he worked in the wine trade, from 1625 to 1659 he was a member of the wine merchants’ guild, and in 1632 he is recorded as a merchant. In the painting he is the company’s captain of arms, responsible for storing and maintaining the weapons: he stands in the background between Captain Banninck Cocq and Lieutenant van Ruytenburch, with a two-handed sword resting on the ground; no official documents about his post have been found, and the painting itself is considered the only evidence of his rank. His connections in the company proved useful: in 1654 Frans Banninck Cocq, by then burgomaster, appointed him steward of the Handboogdoelen, the archers’ guild house, where Keijser served until his death. He was the uncle of the painter Gabriël Metsu and on 12 April 1658 was a witness at his nephew’s wedding. He was buried on 31 January 1664 in the Nieuwe Kerk. The sources contain no information about any personal acquaintance with Rembrandt.",
+   "rembrandt": "The sources contain no information about any personal acquaintance with Rembrandt. The Ecartico database records only an artistic relationship: “portrayed by Rembrandt in 1642” (The Night Watch). The sources mention no commissions, testimonies or lawsuits involving Rembrandt.",
+   "sources": [
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht",
+    "https://de.wikipedia.org/wiki/Biografien_der_Sch%C3%BCtzen_auf_Rembrandt_van_Rijns_Gem%C3%A4lde_%E2%80%9EDie_Nachtwache%E2%80%9C",
+    "https://fr.wikipedia.org/wiki/Biographies_des_miliciens_figurant_dans_La_Ronde_de_nuit_de_Rembrandt",
+    "https://ecartico.org/persons/15537",
+    "https://ecartico.org/persons/5204"
+   ]
+  },
+  "Оккерсен": {
+   "name": "Jan Ockersen",
+   "original": "Jan Ockersen (in documents also Jan Ockersz., Jan Ockers)",
+   "years": "1599–1652",
+   "text": "Jan Ockersen (1599–1652) was an Amsterdam cloth merchant. He was baptised in the Oude Kerk on 22 January 1599 and buried there on 19 March 1652. He carried on his father’s business in the house “Het Groene Claverblat” (“The Green Cloverleaf”) on the Nieuwendijk; between 1638 and 1651 he was seven times a syndic of the drapers’ guild, served for many years as an inspector of weights and measures, and in 1650 became lieutenant of the company of District XXI. In 1621 he married Wijntje Cornelis Braber from Rotterdam; they had ten children. In the painting, according to Dudok van Heel’s identification (2009), he is the pikeman in a cuirass and an old-fashioned tall hat behind Captain Banninck Cocq; in the inscription on the shield his name is the tenth. His family is remembered for an episode of the iconoclasm of 1566: his grandmother’s sister Weyn Ockers threw a shoe at an image of the Virgin in the Oude Kerk, for which in 1568 she was drowned in a wine barrel on Dam Square. The sources contain no information about any personal acquaintance with Rembrandt.",
+   "rembrandt": "The sources contain no information about any personal acquaintance with Rembrandt. He was one of the sixteen rank-and-file militiamen who paid the artist for their portraits: according to Jan Pietersen Bronckhorst’s statement of 1659, each paid about a hundred guilders, some more, some less, depending on their place on the canvas. By 1659, when his fellow militiamen gave these statements in the matter of Titus van Rijn’s inheritance, Ockersen had been dead for seven years.",
+   "sources": [
+    "https://bulletin.rijksmuseum.nl/article/view/11665",
+    "https://bulletin.rijksmuseum.nl/article/download/11665/13205/23790",
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht",
+    "https://onsamsterdam.nl/artikelen/thuis-bij-de-mannen-op-de-nachtwacht",
+    "https://ecartico.org/persons/57453"
+   ]
+  },
+  "Бронкхорст": {
+   "name": "Jan Pietersen Bronckhorst",
+   "original": "Jan Pietersen Bronchorst (as on the shield with the names; in documents Jan Pietersz Bronckhorst; in deeds and in the 1659 statement: “Jan Pietersz, laeckencoper”)",
+   "years": "1587–after 1666",
+   "text": "Jan Pietersen Bronckhorst (Husum, 1587 – after 1666) was an Amsterdam cloth merchant. He started out as a cloth shearer, worked his way up to clothier and merchant, and built up a modest fortune: 6,000 guilders according to the 1631 tax register. He lived in the drapers’ quarter at Nieuwezijds Voorburgwal 94, in the house “De Blauwe Pot” (“The Blue Pot”); there is no record of him holding any civic office. According to the reconstruction by the historian Dudok van Heel (2009), in Banninck Cocq’s company he was a rondassier, a shield-bearer who guarded the ensign; he is presumably the grey-bearded old man in a helmet (figure no. 7), the oldest of the militiamen — in 1642 he was 55 — and, in the same author’s words, the man in the humblest place in the painting. On the shield with the names he is listed eleventh. In 1659, when Titus’s guardian was establishing the value of Saskia’s estate, Bronckhorst — “about seventy years old”, as the deed records — declared before the notary Nicolaes Listingh that Rembrandt had painted him together with fifteen comrades from the company and that each had paid about a hundred guilders, “some more, some less”, depending on their place in the painting. He owned two graves in the choir of the Nieuwe Kerk, next to the grave of Admiral Michiel de Ruyter.",
+   "rembrandt": "The only documented connection with Rembrandt is the commission itself. Bronckhorst sat for The Night Watch, and in 1659, before the notary Nicolaes Listingh, at the request of Louis Crayers, Titus’s guardian, he confirmed that he had been “painted and portrayed by the painter Rembrandt van Rijn” together with fifteen comrades from the company, and named the price: about a hundred guilders per person, some more, some less, depending on their place in the painting. Together with a second statement from the same year (Claes van Cruijsbergen, 1,600 guilders), this is the main source of the traditional information about Rembrandt’s fee for the painting. No information about any personal acquaintance with Rembrandt beyond this commission — correspondence, other commissions, lawsuits — was found in the sources used.",
+   "sources": [
+    "https://bulletin.rijksmuseum.nl/article/view/11665",
+    "https://onsamsterdam.nl/artikelen/thuis-bij-de-mannen-op-de-nachtwacht",
+    "https://www.geschiedenislokaalamsterdam.nl/bronnen/een-verklaring-over-de-nachtwacht/",
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht",
+    "https://www.rijksmuseum.nl/en/collection/object/The-Night-Watch-Militia-Company-of-District-II-under-the-Command-of-Captain-Frans-Banninck-Cocq--3137deb45cd7765f9a76084a16c99544"
+   ]
+  },
+  "Вормсверк": {
+   "name": "Harman Jacobsen Wormskerck",
+   "original": "Herman (Harman) Jacobsz Wormskerck",
+   "years": "1590–1653",
+   "text": "Harman Jacobsen Wormskerck (1590–1653) was an Amsterdam cloth merchant from Deventer. In 1628 he was dean of the drapers’ guild; in the Reformed congregation he served as deacon (1630) and elder (1642, 1645, 1649). He lived at Nieuwendijk 201, in the house “Het Groninger Wapen” (“The Arms of Groningen”), and in January 1642, having grown rich and retired from business, he bought a house at Herengracht 166 and named it “Soli Deo Gloria” — “Glory to God alone”. He handed over the business to his wife’s nephew, lending him 60,000 guilders; at his death he left numerous bequests to church institutions and founded a scholarship for future preachers from Deventer and Amsterdam. In Banninck Cocq’s company he was a rondassier, a shield-bearer guarding the ensign and the banner; on the painting’s cartouche he is recorded as “Harman Iacobsen wormskerck”. His only son, Bartholdus, died in the same year, 1653; his widow later married the burgomaster Johannes Hudde. There is no information about any personal acquaintance with Rembrandt; according to Dudok van Heel, in 1653 the widow commissioned a posthumous portrait not from him but from Bartholomeus van der Helst.",
+   "rembrandt": "The sources contain no information about any personal acquaintance with Rembrandt. The only documented connection is his portrait in The Night Watch (1642): as one of the sixteen paying sitters he paid, according to Bronckhorst’s statement of 1659, about a hundred guilders. Dudok van Heel notes that after Wormskerck’s death in 1653 his widow apparently commissioned a posthumous portrait not from Rembrandt but from Bartholomeus van der Helst, and leaves open the question of why.",
+   "sources": [
+    "https://bulletin.rijksmuseum.nl/article/view/11665",
+    "https://bulletin.rijksmuseum.nl/article/download/11665/13205",
+    "https://onsamsterdam.nl/artikelen/thuis-bij-de-mannen-op-de-nachtwacht",
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht",
+    "https://de.wikipedia.org/wiki/Die_Nachtwache"
+   ]
+  },
+  "Щитоносец": {
+   "name": "Claes van Cruijsbergen",
+   "original": "Claes van Cruijsbergen (in documents also Nicolaes van Cruysbergen)",
+   "years": "1613–1663",
+   "text": "Claes van Cruijsbergen (1613–1663) was an Amsterdam merchant and grocer. He was baptised in the Nieuwe Kerk on 26 February 1613 and buried in the Oude Kerk on 16 May 1663; he never married. He was the grandson of two regents: his maternal grandfather, Jacob Hoyngh, was captain of the militia of District III from 1589 to 1625 and ten times a warden of the drapers’ guild. In early 1639 Claes opened a grocery business on the Damrak, apparently gave it up around 1650, and from 5 February 1651 served as provost of the civic guard, responsible for the militiamen’s discipline. In the company he was a rondassier (shield-bearer), whose duty was to protect the ensign and the banner: in the painting he stands, in a helmet and with a broadsword, next to the standard-bearer Jan Visscher Cornelisen; in 1642 he was 29. Imaging carried out during Operation Night Watch showed that Rembrandt first painted feathers on his helmet and then painted them out. In 1659 he testified before a notary that he had paid his own share for the painting and that it had cost 1,600 guilders.",
+   "rembrandt": "The sources contain no information about any personal acquaintance with Rembrandt. There is a documentary link: he was one of the militiamen who paid for their portraits, and in 1659, after Rembrandt’s bankruptcy, at the request of Titus’s guardian Lodewijk Crayers, he made a notarial statement to establish Titus’s inheritance: that the painting in the Kloveniersdoelen was by Rembrandt, that he himself was portrayed in it, and that it had cost 1,600 guilders, towards which he had paid his share (Dudok van Heel 2009; Beleef De Nachtwacht).",
+   "sources": [
+    "https://bulletin.rijksmuseum.nl/article/view/11665",
+    "https://bulletin.rijksmuseum.nl/article/download/11665/13205/23790",
+    "https://www.beleefdenachtwacht.nl/thema/wie-is-wie/claes-van-cruijsbergen",
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht",
+    "https://onsamsterdam.nl/artikelen/thuis-bij-de-mannen-op-de-nachtwacht"
+   ]
+  },
+  "Схеллингвау": {
+   "name": "Walich Schellingwou",
+   "original": "Walich Schellingwou",
+   "years": "1613–1653",
+   "text": "Walich Schellingwou (baptised in Amsterdam on 21 March 1613 – buried there on 5 July 1653) was an Amsterdam wine merchant from a family of drapers that had traded on the Nieuwendijk for eighty years. In 1641 he married Margarieta Backers from Haarlem; they had five sons. In 1645 the family moved from the Nieuwendijk to the houses “The Sun” and “The Moon” on the Herengracht (nos. 181 and 183), and Schellingwou kept his wine store in rented cellars in the house of his fellow militiaman Harman Wormskerck on the other side of the canal. In the painting he is the pikeman above the lieutenant’s hat: the inventory of his possessions lists no musket but does list a pike, and it is with a pike that he is painted; the figure was identified in 1983 by Irina Linnik. He died at the age of forty, at the height of the First Anglo-Dutch War. His portrait of 1641, probably a wedding portrait, was bought for Catherine II in 1772 as a work by Rembrandt — the signature turned out to be forged and the artist is unknown; today it is in the Hermitage.",
+   "rembrandt": "The sources contain no information about any personal acquaintance with Rembrandt. All that is known is that he was one of the militiamen who paid for their portraits in The Night Watch (his name is on the cartouche), and that his own portrait of 1641 was later sold to Russia as a work by Rembrandt with a forged signature — the real artist is unknown.",
+   "sources": [
+    "https://bulletin.rijksmuseum.nl/article/view/11665",
+    "https://bulletin.rijksmuseum.nl/article/download/11665/13205",
+    "https://www.vondel.humanities.uva.nl/ecartico/persons/54870",
+    "https://www.openarchieven.nl/saa:734977d7-a3e7-4237-9f9a-c92030b14bba/de",
+    "https://monumentenregister.cultureelerfgoed.nl/monumenten/3836"
+   ]
+  },
+  "Болхамер": {
+   "name": "Barent Harmansen Bolhamer",
+   "original": "Barent Harmansen Bolhamer",
+   "years": "1589–1661",
+   "text": "Barent Harmansen Bolhamer (1589–1661) was an Amsterdam grocer who traded in Eastern and colonial goods. In 1616 he bought a house under the sign “Utrecht” on the Nieuwezijds Voorburgwal (now no. 91) and settled there with his sister; in 1635 they moved to Singel 157 and lived together until his death. He never married and, as far as is known, had no children; after his death a certain Alida Bolhamer declared herself his sole lawful heir and received the house. Of the eighteen militiamen who paid for the painting, he was one of the two Catholics; like the other rank-and-file members, he had an above-average income but did not belong to the city’s merchant elite. In the painting he is a pikeman, one of the older militiamen; he stands on the right, behind the musketeer Jan Claesen Leijdeckers. His name, in the form “Barent Harmansen”, is sixth on the shield with the names of the patrons, directly after the sergeants.",
+   "rembrandt": "The sources used contain no information about any personal acquaintance with Rembrandt. All that is known is that he was one of the eighteen militiamen who paid to be portrayed (about 100 guilders per person, according to the 1659 statement), and that his name is on the shield with the names of the patrons.",
+   "sources": [
+    "https://id.rijksmuseum.nl/21074842",
+    "https://id.rijksmuseum.nl/23029985",
+    "https://www.rijksmuseum.nl/en/collection/object/The-Night-Watch-Militia-Company-of-District-II-under-the-Command-of-Captain-Frans-Banninck-Cocq--3137deb45cd7765f9a76084a16c99544",
+    "https://www.rijksmuseum.nl/en/collection/object/Copy-of-The-Night-Watch--262d52558e31de3e998f1d79cadc035f",
+    "https://bulletin.rijksmuseum.nl/article/view/11665"
+   ]
+  },
+  "Виллемсен": {
+   "name": "Elbert Willemsen (Elbert Willemsz Swedenrijck)",
+   "original": "Elbert Willemsen (Elbert Willemsz Swedenrijck; in documents also Elbert Willem Louwerisznszn)",
+   "years": "1589–1644",
+   "text": "Elbert Willemsen, also known as Elbert Willemsz Swedenrijck (1589–1644), was an Amsterdam merchant, the eldest son of Guilliam Louwerijsz, a merchant and fishmonger from Antwerp. He was born and died in the same house on the Nieuwendijk, “The Three Gilded Stockfish” (De Drie Vergulde Stockvissen), the fourth north of the Gravenstraat; in the 1631 tax register his fortune was assessed at 20,000 guilders. In 1626 he married Elisabeth Lenaerts; the capital ledger of the West India Company for 1623–1626 records an investment of 1,800 guilders in his name. In 1639 he bought half of the house “Zwedenrijk” on the Nieuwendijk, from which his children took the surname Swedenrijck; he himself, according to Dudok van Heel, is first mentioned under that name only after his death. In Banninck Cocq’s company he was a rank-and-file militiaman; in the painting he is tentatively identified as the musketeer in an unusual plumed helmet (figure no. 9), one of the oldest in the company: in 1642 he was 53. He died in 1644, leaving his children a business worth 90,000 guilders; he was buried in the Zuiderkerk on 4 November 1644.",
+   "rembrandt": "The sources contain no information about any personal acquaintance with Rembrandt. The only documented connection is that his name is on the cartouche of The Night Watch among the eighteen militiamen, and Ecartico records the relationship “portrayed by Rembrandt Harmensz. van Rijn, 1642”; according to Jan Bronckhorst’s statement (1659), the sixteen militiamen portrayed paid about ƒ 100 each for the painting. After his death, in 1655, his daughter Geertruyt received under the will of Nicolaes Smout “a little head of a Moor by Rembrandt” — but that is a fact about the family, not about Elbert himself.",
+   "sources": [
+    "https://bulletin.rijksmuseum.nl/article/view/11665",
+    "https://bulletin.rijksmuseum.nl/article/download/11665/13205",
+    "https://ecartico.org/persons/62747",
+    "https://www.nikhef.nl/~louk/SWEDEN/generation1.html",
+    "https://de.wikipedia.org/wiki/Die_Nachtwache"
+   ]
+  },
+  "Энгелен": {
+   "name": "Reijnier Engelen",
+   "original": "Reijnier (Reijer) Jansz Engelen",
+   "years": "1588–1651",
+   "text": "Reijnier (Reijer) Jansz Engelen (1588–1651) was an Amsterdam cloth merchant and a sergeant in Frans Banninck Cocq’s company. He was baptised in the Nieuwe Kerk on 19 January 1588 and buried there on 24 April 1651; he was the son of the draper Jan Engelsz, a syndic of the drapers’ guild. He worked all his life on the Nieuwendijk, where he lived in the house “De Vergulde Boogh” (no. 189); in 1631 his property was valued at 6,000 guilders — more modest than that of his wealthy fellow members of the company. In 1624 he was fined for selling unsealed cloth, that is, cloth that had not passed the guild’s inspection; unlike his father, he never became a syndic of the guild, and he became sergeant (no later than 1640) by seniority among the militiamen. In the painting he sits on the left on the low wall by the railing of the bridge, in a fanciful helmet, with his halberd raised; the other sergeant, Rombout Kemp, stands on the right. Soon after The Night Watch was completed, Engelen moved to the Singel, in a different district, and had to give up his post as sergeant; his only daughter married a canon of Utrecht, and the family’s ties with Amsterdam were broken.",
+   "rembrandt": "The sources contain no information about any personal acquaintance with Rembrandt. All that is known is that he was one of the sixteen militiamen (not counting the captain and the lieutenant) who each paid Rembrandt about a hundred guilders for their place in the painting — 1,600 guilders in all (the 1659 statements of Bronckhorst and Van Cruijsbergen; Dudok van Heel 2009; Ons Amsterdam). The old hypothesis of Dyserinck (1890) and Sterck (1907), which identified the sergeant with the Catholic priest Reynier Ingels (1620–1673), is incompatible with Dudok van Heel’s archival findings (baptised in 1588, Reformed, cloth merchant); Dudok van Heel himself does not discuss this theory.",
+   "sources": [
+    "https://bulletin.rijksmuseum.nl/article/view/11665",
+    "https://bulletin.rijksmuseum.nl/article/download/11665/13205/23790",
+    "https://onsamsterdam.nl/artikelen/thuis-bij-de-mannen-op-de-nachtwacht",
+    "https://www.beleefdenachtwacht.nl/thema/wie-is-wie/reijnier-engelen",
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht"
+   ]
+  },
+  "Лунден": {
+   "name": "Rombout Kemp",
+   "original": "Rombout Kemp",
+   "years": "1597–1653",
+   "text": "Rombout Kemp (1597–1653) was an Amsterdam cloth merchant and a sergeant in Frans Banninck Cocq’s company. He was baptised in the Oude Kerk on 4 January 1597, the son of the cloth merchant Aert Kemp from ’s-Hertogenbosch and Clara Jacobs from Antwerp. In 1623 he married Elsje van Baersdorp, from a ruling family of Leiden; they had twelve children. He lived on the Nieuwendijk in his parents’ house “De Brabantse Wagen” (now no. 199): in 1641 his mother left it to him, her eldest son, together with the family’s Latin books. He was a deacon of the Reformed Church, seven times between 1631 and 1641 a sampling official (staalmeester) of the drapers’ guild, and from 1635 until his death a regent of the Nieuwezijds Huiszittenhuis, the poor-relief board. He never held high city office: according to Dudok van Heel, his wife’s Calvinist relatives were no longer among the influential families in the Town Hall. A sergeant no later than 1640, he succeeded Van Ruytenburch as lieutenant in 1646, and in 1650 his son Artus became the company’s ensign. In the painting he is 45: he stands on the right, behind the drummer, in black civilian dress with an old-fashioned millstone ruff and a broad-brimmed hat, his right arm stretched out to the left, with a sergeant’s halberd. He was buried in the Nieuwe Kerk on 27 October 1653.",
+   "rembrandt": "The sources contain no information about any personal acquaintance with Rembrandt; the only documented link is the commission. The name “Rombout Kemp Sergeant” is fourth on the shield, after the captain, the lieutenant and the ensign. According to Jan Bronckhorst’s statement of 1659, the sixteen militiamen (not counting the captain and the lieutenant) paid about 100 guilders each, “one a little more, the other a little less”, according to their place in the painting; how much Kemp himself paid is not known. Imaging carried out during Operation Night Watch showed that Rembrandt first painted his leg in a different position. A coincidence: Kemp was seven times a sampling official of the drapers’ guild — the board whose members Rembrandt portrayed in 1662 in The Syndics.",
+   "sources": [
+    "https://bulletin.rijksmuseum.nl/article/view/11665",
+    "https://www.beleefdenachtwacht.nl/thema/wie-is-wie/rombout-kemp",
+    "https://onsamsterdam.nl/artikelen/thuis-bij-de-mannen-op-de-nachtwacht",
+    "https://www.rijksmuseum.nl/en/press/press-releases/preparatory-sketch-discovered-beneath-the-night-watch",
+    "https://de.wikipedia.org/wiki/Die_Nachtwache",
+    "https://www.rijksmuseum.nl/en/collection/object/The-Sampling-Officials-of-the-Amsterdam-Drapers-Guild-Known-as-The-Syndics--575b43f479d021359fb5f63b32f7c234"
+   ]
+  },
+  "Статист 1": {
+   "name": "The unknown militiaman in a hat",
+   "original": "",
+   "years": "—",
+   "text": "The man in a hat behind the musketeer is one of several nameless heads in the painting: Rembrandt painted portraits of the 16 militiamen who paid and of the two officers; the other figures are extras. According to Dudok van Heel (2009), all 18 names on the shield have been assigned: Jan Brugman and Jacob Dircksz de Roy stood on the left strip cut off in 1715, and Paulus Schoonhoven is the pikeman next to Sergeant Kemp on the right; several heads have remained labelled simply “Head of a man”. Brugman (1614–1652) was the youngest and richest of the rank and file, a cloth merchant at Damrak 64; de Roy (1601–1659) was a Catholic cloth merchant at Nieuwendijk 196, a regent of the Catholic poor relief and one of the governors of the Schouwburg theatre. The musketeer in red behind the lieutenant’s shoulder, blowing on the pan, may, according to Dudok van Heel, be Jan Claesen Leijdeckers (1597–1640), who died before the painting was finished; his pose follows de Gheyn’s engraving exactly. The sources give no firm identification of the figure in the hat.",
+   "rembrandt": "The figure has not been identified. The sources contain no information about any personal acquaintance of any of the candidates (Brugman, de Roy, Schoonhoven) with Rembrandt beyond the commission of the group portrait itself. Dudok van Heel notes only an indirect link: Brugman’s cousin Nicolaes Seys Pauw was the landlord of Hendrick van Uylenburgh, for whom Rembrandt worked.",
+   "sources": [
+    "https://bulletin.rijksmuseum.nl/article/view/11665",
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht",
+    "https://onsamsterdam.nl/artikelen/thuis-bij-de-mannen-op-de-nachtwacht",
+    "https://www.tamurajones.net/NightWatchIdentitiesRevealed.xhtml",
+    "https://ecartico.org/persons/54865"
+   ]
+  },
+  "Чел в шлеме": {
+   "name": "The pikeman in the helmet",
+   "original": "presumably Paulus Schoonhoven",
+   "years": "",
+   "text": "A pikeman in a helmet with a red neckerchief in the group on the right, next to Sergeant Rombout Kemp. According to Dudok van Heel (2009), this is Paulus Schoonhoven: he was one of the last to join the company and held no rank, and was therefore identified as the private next to the sergeant; the identification is based on age, wealth and rank, and is therefore conjectural. Schoonhoven was born in Goes around 1595, came to Amsterdam in 1616 to train with his uncle, the broker Isaac Florianus, joined the brokers’ guild in 1623 and worked for more than half a century. In 1639 he bought a house on the Singel (on the Rouaanse Kaai, “The Elector of Brandenburg”) next door to the painter Claes Moeyaert. His name — the eighteenth on the shield — emerged only during the cleaning of 1947. He died in Amsterdam on 8 July 1679 — the only one of those portrayed who outlived Rembrandt.",
+   "rembrandt": "Apart from the commission of the group portrait itself (Ecartico: “portrayed by Rembrandt, 1642”), the sources contain no information about any personal acquaintance between Schoonhoven and Rembrandt.",
+   "sources": [
+    "https://ecartico.org/persons/63116",
+    "https://bulletin.rijksmuseum.nl/article/view/11665",
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht",
+    "https://www.beleefdenachtwacht.nl/thema/wie-is-wie/paulus-schoonhoven",
+    "https://de.wikipedia.org/wiki/Die_Nachtwache"
+   ]
+  },
+  "Барабанщик": {
+   "name": "Jacob Jorisz",
+   "original": "Jacob Jorisz (in Dudok van Heel: Jacob Joriszn)",
+   "years": "1591–after 1646",
+   "text": "Jacob Jorisz (1591–after 1646) was an Amsterdam drummer who served with the company of Captain Frans Banninck Cocq. Drummers were not members of the militia company; they were hired for pay: according to a statement of 30 July 1646 he received forty guilders a year, whereas the militiamen paid Rembrandt about a hundred for their place in the painting. That is why his name is not on the shield with the eighteen names: of the figures known by name, he is the only one who did not pay for his portrait. He signed the 1646 document not with his name but with a mark. In the painting he is 51: he stands in the right-hand corner, a step behind the captain and the lieutenant, in full light, and beats a drum roll — turning the captain’s gesture into sound, the signal to march. Rembrandt dressed him in a fanciful sixteenth-century-style costume: a green beret of heavy cloth and a slashed silk doublet with a yellow lining. The drummer’s correct name was published in 2009 by the historian Bas Dudok van Heel; in 1758 Jan van Dyk mistakenly read the name “Jan van Kampoort, Tamboer” on the shield.",
+   "rembrandt": "The sources contain no information about any personal acquaintance with Rembrandt. All that is known is that Rembrandt, by his own choice, gave the hired drummer, who had not paid for his portrait, a prominent place in the painting for the sake of the drama of the scene (Rijksmuseum, Di Stefano 2021; Dudok van Heel 2009).",
+   "sources": [
+    "https://bulletin.rijksmuseum.nl/article/view/11665",
+    "https://bulletin.rijksmuseum.nl/article/download/11665/13205",
+    "https://www.rijksmuseum.nl/nl/stories/operatie-nachtwacht/story/wie-was-de-tamboer-in-de-nachtwacht",
+    "https://www.rijksmuseum.nl/nl/stories/operatie-nachtwacht/story/tamboer-in-de-tijd-van-de-nachtwacht",
+    "https://www.geschiedenislokaalamsterdam.nl/bronnen/een-verklaring-over-de-nachtwacht/"
+   ]
+  },
+  "Мальчик": {
+   "name": "The powder boy",
+   "original": "De kruitjongen / Powder boy",
+   "years": "—",
+   "text": "On the left, a boy in an oversized “pot” helmet is almost running out of the painting; around his neck hangs a horn with a supply of powder — he is a powder boy. His job was to bring powder to the musketeers in time, once they had used up the charges in the measures on their bandoliers. According to the Rijksmuseum, Rembrandt is the only artist to have included powder boys in a militia group portrait; the running figure heightens the sense of the company’s movement. On the left strip, presumably cut off in 1715, there was, judging by the Lundens copy, another child — most likely also a powder boy. The 2021 reconstruction shows that the boy is holding on to the railing and has more room left to run. His identity has not been established.",
+   "rembrandt": "The figure is anonymous; the sources contain no information about a model or about any personal acquaintance with Rembrandt.",
+   "sources": [
+    "https://www.rijksmuseum.nl/nl/stories/operatie-nachtwacht/story/de-kruitjongen",
+    "https://www.rijksmuseum.nl/nl/pers/persberichten/volledige-nachtwacht-voor-het-eerst-in-300-jaar-te-zien",
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht",
+    "https://de.wikipedia.org/wiki/Die_Nachtwache",
+    "https://onsamsterdam.nl/artikelen/opheldering-over-de-nachtwacht"
+   ]
+  },
+  "Собака": {
+   "name": "The dog",
+   "original": "De hond / de blaffende hond",
+   "years": "—",
+   "text": "At the lower right, a grey dog with its head raised barks at the drummer. In September 2025 Anne Lenders, curator of Operation Night Watch, saw a 1619 drawing by Adriaen van de Venne in an exhibition and established that Rembrandt had copied the dog from it almost exactly; the drawing is a design for the title page of Jacob Cats’s book “Self-stryt”, about Joseph and Potiphar’s wife, and has been in the Rijksmuseum for more than a hundred years. The turn of the head, the half-open mouth, the dark line of the right eye and the collar all match; Rembrandt stood the dog on all four legs and added a tongue. Macro X-ray fluorescence scanning revealed an underpainting with the right foreleg bent more sharply — even closer to the original. The dog’s whitish, patchy look is the result of wear: the upper paint layers were rubbed away by earlier restorations, exposing the light chalk sketch with which Rembrandt laid out the composition.",
+   "rembrandt": "Not applicable: the dog is a borrowed motif; its prototype is a 1619 drawing by Adriaen van de Venne.",
+   "sources": [
+    "https://www.rijksmuseum.nl/nl/pers/persberichten/originele-tekening-hond-op-de-nachtwacht-ontdekt",
+    "https://www.rijksmuseum.nl/en/press/press-releases/original-drawing-of-the-dog-in-the-night-watch-discovered",
+    "https://www.rijksmuseum.nl/nl/stories/operatie-nachtwacht/story/whats-up-dog",
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht",
+    "https://www.rijksmuseum.nl/nl/collectie/SK-C-5"
+   ]
+  },
+  "Картуш": {
+   "name": "The cartouche with names",
+   "original": "Schild / cartouche met de namen van de schutters",
+   "years": "—",
+   "text": "The oval shield on the right, on the arch of the gateway, bearing the 18 names of the militiamen who paid for the portrait, was added later by an unknown hand: around 1653 according to Dudok van Heel, around 1715 according to other sources; it does not yet appear in the Lundens copy. The names are listed not by position in the painting but by seniority in the company: from Captain Frans Banninck Cocq and Lieutenant Willem van Ruytenburch to Paulus Schoonhoven. By the 18th century the darkened varnish had made the inscription illegible; after the cleaning of 1947 all the names reappeared, including the eighteenth, Schoonhoven’s. The hired drummer Jacob Jorisz is not on the shield: he did not pay. Which name belongs to which face was established only in 2009, by Bas Dudok van Heel. In this 3D scene the object is labelled “shield with a Gogol quotation”: instead of the names, it bears a quotation.",
+   "rembrandt": "The shield was added by an unknown hand after Rembrandt had finished the painting; the artist himself had nothing to do with it.",
+   "sources": [
+    "https://bulletin.rijksmuseum.nl/article/view/11665",
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht",
+    "https://en.wikipedia.org/wiki/The_Night_Watch",
+    "https://www.nationalgallery.org.uk/paintings/gerrit-lundens-after-rembrandt-the-company-of-captain-banning-cocq-the-nightwatch",
+    "https://www.rijksmuseum.nl/nl/collectie/SK-C-5"
+   ]
+  },
+  "Андрей": {
+   "name": "Andries van Sudijn",
+   "original": "Andries van Sudijn",
+   "years": "1602–1695",
+   "text": "Andries van Sudijn (baptised 27 September 1602, Leiden — 1695, Amsterdam) was an Amsterdam patrician merchant, one of the principal shareholders of the Dutch East India Company (VOC), a brilliant self-taught inventor and a prose writer. A member of the influential Amsterdam Merchants’ Guild and a patron of letters, by 1642 he was worth a colossal 120,000 guilders.\nHe lived in a luxurious mansion on the Herengracht and won fame in learned circles for inventing a ship’s secretaire of a special design — a multi-tiered steel chest with hidden grooves that let small valuable goods (nutmeg, spices and ambergris) be stowed compactly, increasing the usable capacity of a hold by 25%. In the time left over from logistics he wrote intellectual novellas under the pen name “The Flying Dutchman”.\nIn the company of District II he held the exceptional post of honorary staff treasurer, which exempted him from carrying a vulgar musket. In the painting he is “the man in black”, whose suit of the finest Lyon velvet with exquisite embroidery and Brussels lace looks more splendid than Captain Cocq’s attire and yields only to the wardrobe of Marie de’ Medici. On his head gleams a parade helmet of pure gold, and with his right hand he rests an enormous two-handed sword in its scabbard on the floor. Rank-and-file militiamen were strictly forbidden to carry weapons such as the zweihänder, but van Sudijn, as the company’s civilian patron, simply ignored the regulations, proudly declaring that his status and inventions entitled him to any calibre of steel that went perfectly with his helmet.\nHis relationship with Rembrandt was long and stormy, but… strictly financial: the painter owed van Sudijn a large sum for deliveries of rare Chinese white for his studio. For his place in The Night Watch Andries ostentatiously paid a record 600 guilders, demanding to be painted in the most prominent spot, outshining the commanders. Rembrandt, however, irritated by the merchant’s arrogance and weary of his lectures on the ergonomics of ships’ holds, got carried away with light and shade and moved the inventor to the right-hand edge of the canvas.\nIn 1715, when the canvas was barbarously reduced, Amsterdam carpenters cut van Sudijn off, so that only the shadow of his sword remains on the original, and only this reproduction preserves his true grandeur. The archives keep an angry draft of a novel by Andries whose chief villain is a mad painter who steals gold from honest merchants to turn it into paint for picture frames.",
+   "rembrandt": "",
+   "sources": []
+  },
+  "Царевна": {
+   "name": "Marie de Guercheville",
+   "original": "Marie de Guercheville",
+   "years": "1614–1678",
+   "text": "Marie de Guercheville was a noble French princess from the circle of Marie de’ Medici, known for her impeccable taste and her passion for riding. In the 1642 painting (she is exactly 28) she appears as “the lady in red”, walking gracefully towards the right side of the canvas after her queen. She wears a bright scarlet riding habit in the Dutch manner and holds an elegant jockey’s crop — an accessory meant to stress the firmness of her character rather than to manage a horse.\nMarie’s face is lit by a broad, sincere smile: the Amsterdammers’ parade and the indescribable colour of the local fauna clearly give her genuine intellectual pleasure. Rembrandt skilfully worked her into the composition, adding the dynamism of a Parisian promenade to the strict geometry of the militia.",
+   "rembrandt": "",
+   "sources": []
+  },
+  "Алла": {
+   "name": "Aliénor de Moranie, Duchess of Morania",
+   "original": "Aliénor de Moranie",
+   "years": "1614–1698",
+   "text": "Aliénor de Moranie came from one of the oldest aristocratic families in France and was a lady-in-waiting to Marie de’ Medici. When the masterpiece was painted in 1642 she, too, had just turned 28. On the canvas she is “the lady in blue”, closing the ceremonial procession of ladies-in-waiting heading for the right flank. Dressed in an exquisite Dutch riding costume of a sky-blue shade, Aliénor smiles broadly.\nBesides the festive mood, the reason for her merriment is the parade of dogs unfolding right at her feet. Rembrandt invited the duchess into the picture to lend the scene a royal charm, but her radiant gaze is directed past the gallant guardsmen — straight at the fluffy retinue accompanying their diplomatic mission.",
+   "rembrandt": "",
+   "sources": []
+  },
+  "Кошка с собакой": {
+   "name": "The Amsterdam cavalry",
+   "original": "",
+   "years": "",
+   "text": "The royal cortège in the painting is escorted by three hunting spaniels, meant to symbolise loyalty and vigilance. Yet the true triumph of Baroque eclecticism is a huge house cat which, fully sharing the ladies’ passion for riding, sits astride one of the spaniels. To meet the strict dress code of the Amsterdam militia and to match treasurer van Sudijn in splendour, the cat wears a tightly starched Dutch collar (a “rabat”).\nThis fluffy cavalry, weaving between the boots of musketeers and ladies-in-waiting, was meant by the artist not only to embody the chaos of a real muster but also to prove beyond doubt that the East India Company takes only the best, whatever their species.",
+   "rembrandt": "",
+   "sources": []
+  },
+  "Тотошка": {
+   "name": "Totoshka",
+   "original": "",
+   "years": "",
+   "text": "Totoshka is a junior officer on special assignments and the only member of the company allowed to bark at the captain. He is in charge of inspecting boots, bags and anything that smells even slightly of sausage.\nHe turned up to the muster uninvited, but with such a look on his face that Rembrandt put down his brush and painted him in: there is no arguing with an angel.",
+   "rembrandt": "",
+   "sources": []
+  },
+  "Чипулька": {
+   "name": "Chip",
+   "original": "",
+   "years": "",
+   "text": "Chip is the smallest militiaman in the company, yet in courage he rivals the bravest guardsman.",
+   "rembrandt": "",
+   "sources": []
+  },
+  "я": {
+   "name": "Sasha Pavljenko",
+   "original": "",
+   "years": "",
+   "text": "It’s me, Sasha Pavljenko, checking the lettering on the cartouche.",
+   "rembrandt": "",
+   "sources": []
+  },
+  "Галина Антоновна": {
+   "name": "Marie de' Medici",
+   "original": "Maria de' Medici / Marie de Médicis",
+   "years": "1575–1642",
+   "text": "Marie de' Medici (1575–1642) was Queen of France, the second wife of Henry IV and the mother of Louis XIII. She was born in the Palazzo Pitti in Florence, the daughter of Francesco I de' Medici, Grand Duke of Tuscany, and Joanna of Austria. In 1600 she married Henry IV; of their six children, Louis became king and her daughters became queens of Spain and England and Duchess of Savoy. She was crowned in 1610 and became regent for her eight-year-old son. A generous patron of the arts, she built the Luxembourg Palace in Paris and commissioned from Rubens a cycle of 24 paintings on her life (1622–1625, now in the Louvre). From 1631 she lived in Brussels; in 1638 she paid a ceremonial visit to the Dutch Republic, and then spent three years in England as the guest of her daughter Henrietta Maria.",
+   "rembrandt": "She is not in Rembrandt’s painting; her link with The Night Watch runs through the militiamen and the hall. On 1 September 1638 the queen mother entered Amsterdam; according to Caspar Barlaeus’s Medicea Hospes (1638), she was received by twenty militia companies, more than four thousand men, some of them standing in armour along the Nieuwendijk, where many of the future Night Watch militiamen lived. The guard of honour was formed by the arquebusiers’ company of Captain Cornelis Bicker, which made the occasion the subject of its group portrait by Joachim von Sandrart (1640), with a bust of the queen, painted for the Great Hall of the Kloveniersdoelen, where The Night Watch was later hung as well. According to one theory, the visit prompted the paintings for the hall: Jan Six and Frederik Schmidt-Degener believed that The Night Watch, too, shows a company setting out to meet the queen. This is disputed: Banninck Cocq and Van Ruytenburch became officers of the company only in 1639.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Marie_de%27_Medici",
+    "https://nl.wikipedia.org/wiki/Maria_de%27_Medici",
+    "https://archive.org/details/mediceahospessiv00baer",
+    "https://www.rijksmuseum.nl/en/collection/object/Officers-and-other-Civic-Guardsmen-of-the-XIX-District-of-Amsterdam-under-the-command-of-Captain-Cornelis-Bicker-and-Lieutenant-Frederick-van-Banchem-waiting-to-welcome-Marie-de-Medicis-1-September-1638--4ee44d8ab0a79d3af3c3c6c5a52e6116",
+    "https://de.wikipedia.org/wiki/Die_Nachtwache",
+    "https://bulletin.rijksmuseum.nl/article/view/11665"
+   ]
+  },
+  "Рембрандт": {
+   "name": "Rembrandt van Rijn",
+   "original": "Rembrandt Harmenszoon van Rijn",
+   "years": "1606–1669",
+   "text": "Rembrandt Harmenszoon van Rijn (1606–1669) was a painter, etcher and draughtsman, one of the greatest artists of the Dutch Golden Age. The son of a Leiden miller, he enrolled at Leiden University in 1620 but chose painting instead, training with Jacob van Swanenburg and then with Pieter Lastman in Amsterdam. From 1625 he worked in Leiden; at the end of 1631 he moved to Amsterdam, where he quickly became the city’s leading portraitist; in 1634 he married Saskia van Uylenburgh, and in 1639 he bought a house in the Breestraat. His work is recognisable by its chiaroscuro — strong light picking out the essential from the darkness — and by its thick, almost sculpted paint. About 300 paintings survive, as many etchings, several hundred drawings and some hundred self-portraits. According to the Rijksmuseum, he was the first to paint a group portrait in which the figures are actually doing something: The Night Watch. In 1642, the year it was completed, Saskia died. The legend that the sitters’ dissatisfaction ruined him has never been proven, but after 1642 his portrait commissions dried up for years; in 1656 he declared himself insolvent, his house and collection were sold, and the family moved to the Rozengracht. He outlived Hendrickje Stoffels and his son Titus, died on 4 October 1669 and was buried in a rented grave in the Westerkerk.",
+   "rembrandt": "Rembrandt received the commission no later than the end of 1640: the painting includes the militiaman Jan Leijdeckers, who died in December 1640. The canvas was made for the Great Hall of the new Kloveniersdoelen. According to statements made in 1659, sixteen militiamen paid about 100 guilders each, some 1,600 in all; what the captain and the lieutenant paid is unknown (Dudok van Heel estimates about 500 each). The name The Night Watch first appears in a document of 1797: darkened varnish had turned the daylight scene into a night one. In 1715 the painting was moved to the Town Hall on the Dam and cut down on all sides to fit between two doors; today it measures 379.5 × 453.5 cm. Experts suspect that the man in a beret behind the ensign is a self-portrait; this has never been proven. Operation Night Watch found an underpainted sketch in light, chalk-rich paint beneath the paint layers, as well as changes: feathers painted out on Van Cruijsbergen’s helmet, Kemp’s leg in a different position and traces of an extra sword between the captain and the lieutenant.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Rembrandt",
+    "https://www.rijksmuseum.nl/en/collection/object/The-Night-Watch-Militia-Company-of-District-II-under-the-Command-of-Captain-Frans-Banninck-Cocq--3137deb45cd7765f9a76084a16c99544",
+    "https://www.rijksmuseum.nl/en/stories/10-things/story/10-things-about-rembrandt-s-night-watch",
+    "https://bulletin.rijksmuseum.nl/article/view/11665",
+    "https://www.rijksmuseum.nl/en/press/press-releases/preparatory-sketch-discovered-beneath-the-night-watch",
+    "https://www.beleefdenachtwacht.nl/thema/geheimen/zelfportret"
+   ]
+  },
+  "Девочка в голубом": {
+   "name": "The girl in blue",
+   "original": "",
+   "years": "",
+   "text": "The girl in blue is the shadowy companion of the company’s chief mascot, the girl in gold, completing the militia company’s heraldic rebus. Turned with her back to the viewer, she holds a precious ceremonial goblet (in this reproduction it is a frying pan — a nod to the “carnival” theory, as Rembrandt’s mockery), and her blue dress together with the first girl’s golden attire directly reproduces the official colours of the flag and coat of arms of the musketeers’ guild.",
+   "rembrandt": "",
+   "sources": []
+  },
+  "Статист 2": {
+   "name": "The unknown militiaman in a helmet",
+   "original": "",
+   "years": "—",
+   "text": "A man in a helmet, half hidden behind the round shield of Claes van Cruijsbergen; on the right his face is covered by the pikeman in a tall hat (Jan Ockersen, as identified by Dudok van Heel). He is one of the nameless heads in the painting. The names on the shield above the arch belong to those who paid for a place in the picture, and according to the same study (2009) all 18 of them are already assigned to other figures: sixteen men stand on the canvas, while Jan Brugman and Jacob Dircksz de Roy stood on the strip cut off in 1715. The Dutch Wikipedia also mentions several unidentified people in the painting of whom only heads or helmets are visible. On the other side of Cruijsbergen, between him and the ensign, another head peers over his shoulder — an eye and the edge of a beret; it is usually taken for Rembrandt’s self-portrait, though there is no proof.",
+   "rembrandt": "The figure has not been identified, and the sources contain no information about any link between this man and Rembrandt.",
+   "sources": [
+    "https://bulletin.rijksmuseum.nl/article/view/11665",
+    "https://nl.wikipedia.org/wiki/De_Nachtwacht",
+    "https://www.beleefdenachtwacht.nl/thema/wie-is-wie",
+    "https://commons.wikimedia.org/wiki/File:The_Nightwatch_Jan_Visscher_Cornelissen,_possibly_Rembrandt,_Claes_van_Cruijsbergen.jpg"
+   ]
+  }
+ }
+}
