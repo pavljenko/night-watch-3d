@@ -1,0 +1,406 @@
+<meta charset="utf-8">
+<title>Ночной дозор в 3D</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Golos+Text:wght@400;500;600&display=swap">
+<style>
+  /* Layout: full-bleed WebGL stage; a varnished-dark loading plate centred over it; a small caption plate and a control bar at the edges. */
+  :root {
+    color-scheme: dark;
+    --ground: #0f0d0b;        /* the painting's brown-black */
+    --plate: rgba(22, 18, 14, 0.88);
+    --line: #3b3229;
+    --text: #efe6d6;          /* aged ivory, the white collars */
+    --muted: #a6998a;
+    --ochre: #d9a64e;         /* the lieutenant's yellow buff coat */
+    --ochre-dim: #6d5226;
+    --alarm: #e39b86;
+    --display: "Old Standard TT", "Times New Roman", Georgia, serif;
+    --ui: "Golos Text", "Helvetica Neue", Arial, sans-serif;
+  }
+  html, body { height: 100%; margin: 0 }
+  body { background: var(--ground); color: var(--text); font: 14px/1.45 var(--ui); overflow: hidden }
+  #stage { position: fixed; inset: 0 }
+  #stage canvas { display: block; width: 100%; height: 100%; touch-action: none; outline: none }
+
+  .plate { position: fixed; left: 16px; top: calc(14px + env(safe-area-inset-top, 0px)); max-width: min(330px, calc(100vw - 32px));
+    background: var(--plate); border: 1px solid var(--line); border-radius: 4px; padding: 12px 14px; backdrop-filter: blur(6px) }
+  .plate h1 { font: 700 20px/1.1 var(--display); margin: 0; letter-spacing: .01em; text-wrap: balance }
+  .plate .sub { font: italic 400 13px/1.3 var(--display); color: var(--muted); margin: 3px 0 9px }
+  .plate dl { display: grid; grid-template-columns: max-content 1fr; gap: 2px 14px; margin: 0; font-size: 12.5px }
+  .plate dt { color: var(--muted) }
+  .plate dd { margin: 0; font-variant-numeric: tabular-nums; white-space: nowrap }
+
+  .bar { position: fixed; left: 16px; right: 16px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+  .btn { appearance: none; border: 1px solid var(--line); background: var(--plate); color: var(--text); font: 500 13px/1 var(--ui);
+    padding: 10px 14px; border-radius: 4px; cursor: pointer }
+  .btn:hover { border-color: var(--ochre-dim) }
+  .btn:focus-visible { outline: 2px solid var(--ochre); outline-offset: 2px }
+  .btn[aria-pressed="true"] { border-color: var(--ochre); color: var(--ochre) }
+  .hint { color: var(--muted); font-size: 12px; margin-left: 4px }
+
+  #loader { position: fixed; inset: 0; display: grid; place-items: center; padding-inline: 16px; background: var(--ground);
+    transition: opacity .6s ease }
+  #loader.done { opacity: 0; pointer-events: none }
+  .card { width: min(460px, 100%); display: grid; gap: 18px }
+  .card .eyebrow { font: 500 11px/1 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--muted) }
+  .card h2 { font: 400 34px/1.05 var(--display); margin: 6px 0 0; text-wrap: balance }
+  .card .work { font: italic 400 14px/1.35 var(--display); color: var(--muted); margin-top: 6px }
+  .amount { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-variant-numeric: tabular-nums }
+  .amount .big { font: 500 30px/1 var(--ui); letter-spacing: -.01em }
+  .amount .big small { font-size: 15px; color: var(--muted); font-weight: 400 }
+  .amount .pct { font: 500 18px/1 var(--ui); color: var(--ochre) }
+  .track { position: relative; height: 10px; border: 1px solid var(--line); border-radius: 2px; overflow: hidden; background: #17130f }
+  .fill { position: absolute; inset: 0 auto 0 0; width: 0; background: linear-gradient(90deg, var(--ochre-dim), var(--ochre)); transition: width .15s linear }
+  .ticks { position: absolute; inset: 0; display: flex; pointer-events: none }
+  .ticks i { flex: 1 1 0; border-right: 1px solid rgba(15, 13, 11, .9) }
+  .ticks i:last-child { border-right: 0 }
+  .meta { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; color: var(--muted); font-size: 12.5px; font-variant-numeric: tabular-nums }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; font-size: 13px }
+  .steps li { display: grid; grid-template-columns: 16px 1fr auto; gap: 10px; align-items: center; color: var(--muted) }
+  .steps li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--ochre-dim); justify-self: center }
+  .steps li.now { color: var(--text) }
+  .steps li.now::before { background: var(--ochre); border-color: var(--ochre); animation: pulse 1.1s ease-in-out infinite }
+  .steps li.ok::before { background: var(--ochre-dim); border-color: var(--ochre-dim) }
+  .steps li span:last-child { font-variant-numeric: tabular-nums }
+  #err { display: none; color: var(--alarm); font-size: 13px; line-height: 1.5 }
+  #err.on { display: block }
+  @keyframes pulse { 50% { opacity: .35 } }
+  @media (prefers-reduced-motion: reduce) { .steps li.now::before { animation: none } .fill { transition: none } #loader { transition: none } }
+  @media (max-width: 520px) { .plate dl { display: none } .card h2 { font-size: 28px } .hint { display: none } }
+</style>
+
+<div id="stage" aria-label="Трёхмерная сцена «Ночной дозор»"></div>
+
+<div class="plate" id="plate" hidden>
+  <h1>Ночной дозор</h1>
+  <div class="sub">по картине Рембрандта, 1642</div>
+  <dl>
+    <dt>Моделей</dt><dd id="sModels">—</dd>
+    <dt>Треугольников</dt><dd id="sTris">—</dd>
+    <dt>Текстуры</dt><dd id="sTex">—</dd>
+    <dt>Вес сцены</dt><dd id="sSize">—</dd>
+  </dl>
+</div>
+
+<div class="bar" id="bar" hidden>
+  <button class="btn" id="vHome" type="button">Как на картине</button>
+  <button class="btn" id="vOrbit" type="button" aria-pressed="false">Облёт</button>
+  <span class="hint">Вращение: перетаскивание · приближение: колесо или щипок · сдвиг: правая кнопка или два пальца</span>
+</div>
+
+<section id="loader" aria-live="polite">
+  <div class="card">
+    <div>
+      <div class="eyebrow">Загрузка сцены</div>
+      <h2>Ночной дозор</h2>
+      <div class="work">Рембрандт ван Рейн, 1642 · холст, масло · 379,5 × 453,5 см</div>
+    </div>
+    <div class="amount">
+      <div class="big"><span id="lDone">0,0</span> <small>из <span id="lTotal">—</span> МБ</small></div>
+      <div class="pct" id="lPct">0%</div>
+    </div>
+    <div class="track" role="progressbar" aria-label="Загружено" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="lTrack">
+      <div class="fill" id="lFill"></div>
+      <div class="ticks" id="lTicks"></div>
+    </div>
+    <div class="meta">
+      <span>Осталось <span id="lLeft">—</span> МБ</span>
+      <span id="lSpeed">&nbsp;</span>
+    </div>
+    <ol class="steps" id="lSteps">
+      <li data-k="dl"><span>Файлы сцены</span><span id="stDl">0 из 0</span></li>
+      <li data-k="geo"><span>Геометрия, распаковка Draco</span><span id="stGeo">—</span></li>
+      <li data-k="tex"><span>Текстуры 2560 px</span><span id="stTex">—</span></li>
+      <li data-k="gpu"><span>Свет и первый кадр</span><span id="stGpu">—</span></li>
+    </ol>
+    <div id="err" role="alert"></div>
+  </div>
+</section>
+
+<script type="text/plain" id="draco-wrapper">__DRACO_WRAPPER__</script>
+<script type="text/plain" id="draco-js">__DRACO_JS__</script>
+<script type="text/plain" id="draco-wasm">__DRACO_WASM__</script>
+<script type="application/json" id="scene-data">__SCENE_DATA__</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.1/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+
+const $ = id => document.getElementById(id);
+const DATA = JSON.parse($('scene-data').textContent);
+const plural = (n, a, b, c) => { const m10 = n % 10, m100 = n % 100; return n + ' ' + (m10 === 1 && m100 !== 11 ? a : m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14) ? b : c); };
+const MB = b => (b / 1048576).toLocaleString('ru-RU', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const fail = (msg) => { $('err').textContent = msg; $('err').classList.add('on'); document.querySelectorAll('.steps li.now').forEach(li => li.classList.remove('now')); };
+function step(k, state) { const li = document.querySelector(`.steps li[data-k="${k}"]`); li.classList.remove('now', 'ok'); if (state) li.classList.add(state); }
+
+// ---------- embedded Draco decoder (no network requests besides the scene files)
+THREE.Cache.enabled = true;
+const txt = id => $(id).textContent;
+function b64ToU8(s) { const bin = atob(s.replace(/[^A-Za-z0-9+/=]/g, '')); const u8 = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u8[i] = bin.charCodeAt(i); return u8; }
+THREE.Cache.add('./draco/draco_wasm_wrapper.js', txt('draco-wrapper'));
+THREE.Cache.add('./draco/draco_decoder.js', txt('draco-js'));
+THREE.Cache.add('./draco/draco_decoder.wasm', b64ToU8(txt('draco-wasm')).buffer);
+window.createImageBitmap = undefined;   // GLTFLoader then decodes images through <img>, which the sandbox allows
+
+// ---------- renderer / scene / camera
+const stage = $('stage');
+const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.AgXToneMapping;
+renderer.toneMappingExposure = Math.pow(2, DATA.exposure ?? 0) * (DATA.tune?.exposure ?? 1);
+stage.appendChild(renderer.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0x000000);
+const cam = DATA.camera;
+const camera = new THREE.PerspectiveCamera(40, 1, 0.05, 120);
+const HFOV = 2 * Math.atan(cam.sensor / 2 / cam.lens), FRAME_ASPECT = cam.res[0] / cam.res[1];
+const home = { pos: new THREE.Vector3(...cam.pos), tgt: new THREE.Vector3(...cam.pos).addScaledVector(new THREE.Vector3(...cam.dir), DATA.tune?.targetDist ?? 10.5) };
+camera.position.copy(home.pos); camera.up.set(0, 1, 0);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.copy(home.tgt); controls.enableDamping = true; controls.dampingFactor = 0.08;
+controls.minDistance = 0.8; controls.maxDistance = 30; controls.maxPolarAngle = Math.PI * 0.53; controls.autoRotateSpeed = 0.6;
+function resize() {
+  const w = stage.clientWidth, h = stage.clientHeight, a = w / h; renderer.setSize(w, h, false); camera.aspect = a;
+  // keep the painting's frame fully visible whatever the screen shape
+  const vfovFrame = 2 * Math.atan(Math.tan(HFOV / 2) / FRAME_ASPECT);
+  camera.fov = THREE.MathUtils.radToDeg(a >= FRAME_ASPECT ? vfovFrame : 2 * Math.atan(Math.tan(HFOV / 2) / a));
+  camera.updateProjectionMatrix(); dirty = true;
+}
+let dirty = true; addEventListener('resize', resize); resize();
+controls.addEventListener('change', () => { dirty = true; });
+
+// ---------- lights from the Blender rig
+// Lights without links are ordinary scene lights. Linked lights (a face spot for one figure, the wall spots for the
+// backdrop) are compiled into the material of the objects they light, as light linking works in Blender: each pixel
+// only evaluates its own light instead of looping over every spot in the scene.
+const K = DATA.tune?.light ?? 1;
+const sanitize = n => THREE.PropertyBinding.sanitizeNodeName(n);
+const FACE_DECL = `
+#ifdef NUM_FACE
+uniform vec3 uFacePos[ NUM_FACE ]; uniform vec3 uFaceDir[ NUM_FACE ]; uniform vec3 uFaceColor[ NUM_FACE ]; uniform vec2 uFaceCone[ NUM_FACE ];
+#ifdef FACE_BLOCKER
+uniform mat4 uViewInv; uniform vec3 uFaceWorld[ NUM_FACE ]; uniform vec3 uBlkMin; uniform vec3 uBlkMax;
+#endif
+#ifdef BG_DIM
+uniform float uBgWall; uniform float uBgFloor;
+#endif
+#endif`;
+const FACE_CODE = `
+#ifdef BG_DIM
+{ // backdrop: the unlinked lights and the ambient reach it only partly (in Cycles the figures and the facade shade it)
+  vec3 pwd = ( uViewInv * vec4( geometryPosition, 1.0 ) ).xyz;
+  float dim = mix( uBgFloor, uBgWall, smoothstep( 1.1, 1.9, pwd.y ) );
+  reflectedLight.directDiffuse *= dim; reflectedLight.directSpecular *= dim; irradiance *= dim;
+}
+#endif
+#ifdef NUM_FACE
+for ( int fi = 0; fi < NUM_FACE; fi ++ ) {
+  vec3 lv = uFacePos[ fi ] - geometryPosition; float dd = length( lv ); vec3 ldir = lv / max( dd, 1e-4 );
+  float sp = smoothstep( uFaceCone[ fi ].x, uFaceCone[ fi ].y, dot( ldir, uFaceDir[ fi ] ) );
+  #ifdef FACE_BLOCKER
+  vec3 pw = ( uViewInv * vec4( geometryPosition, 1.0 ) ).xyz; vec3 lw = uFaceWorld[ fi ];
+  float tt = ( uBlkMin.z - pw.z ) / ( lw.z - pw.z );
+  if ( tt > 0.0 && tt < 1.0 ) { vec3 q = pw + tt * ( lw - pw ); if ( q.x > uBlkMin.x && q.x < uBlkMax.x && q.y > uBlkMin.y && q.y < uBlkMax.y ) sp = 0.0; }
+  #endif
+  if ( sp > 0.0 ) {
+    IncidentLight fl; fl.direction = ldir; fl.color = uFaceColor[ fi ] * sp / max( dd * dd, 0.01 ); fl.visible = true;
+    RE_Direct( fl, geometryPosition, geometryNormal, geometryViewDir, geometryClearcoatNormal, material, reflectedLight );
+  }
+}
+#endif`;
+const linked = [], bgUniforms = [];   // { mat, lights: [{ pos, toLight, color, cone }] }
+function spotParams(L) {
+  const col = new THREE.Color().setRGB(L.color[0], L.color[1], L.color[2], THREE.LinearSRGBColorSpace);
+  const inten = (L.type === 'AREA' ? L.energy / Math.PI : L.energy / (4 * Math.PI)) * K;
+  const ang = L.type === 'AREA' ? 1.25 : L.angle, pen = L.type === 'AREA' ? 1 : Math.min(1, L.blend ?? 0.5);
+  return { pos: new THREE.Vector3(...L.pos), toLight: new THREE.Vector3(...L.dir).negate(), color: col.multiplyScalar(inten), cone: new THREE.Vector2(Math.cos(ang), Math.cos(ang * (1 - pen))) };
+}
+function linkInto(mesh, lights, blocker) {
+  const m = mesh.material, n = lights.length;
+  const U = {
+    uFacePos: { value: lights.map(() => new THREE.Vector3()) }, uFaceDir: { value: lights.map(() => new THREE.Vector3()) },
+    uFaceColor: { value: lights.map(l => l.color) }, uFaceCone: { value: lights.map(l => l.cone) },
+    uViewInv: { value: new THREE.Matrix4() }, uFaceWorld: { value: lights.map(l => l.pos) },
+    uBlkMin: { value: new THREE.Vector3() }, uBlkMax: { value: new THREE.Vector3() },
+    uBgWall: { value: DATA.tune?.bgWall ?? 1 }, uBgFloor: { value: DATA.tune?.bgFloor ?? 1 }
+  };
+  if (blocker) bgUniforms.push(U);
+  if (blocker) { U.uBlkMin.value.set(blocker.min[0], blocker.min[1], blocker.min[2]); U.uBlkMax.value.set(blocker.max[0], blocker.max[1], blocker.max[2]); }
+  m.defines = Object.assign(m.defines || {}, { NUM_FACE: n }, blocker ? { FACE_BLOCKER: 1, BG_DIM: 1 } : {});
+  m.onBeforeCompile = sh => {
+    Object.assign(sh.uniforms, U);
+    sh.fragmentShader = sh.fragmentShader.replace('#include <common>', '#include <common>\n' + FACE_DECL).replace('#include <lights_fragment_begin>', '#include <lights_fragment_begin>\n' + FACE_CODE);
+  };
+  m.customProgramCacheKey = () => 'linked-' + n + (blocker ? '-b' : '');
+  m.needsUpdate = true;
+  linked.push({ U, lights });
+}
+function updateLinked() {
+  camera.updateMatrixWorld(); const V = camera.matrixWorldInverse;
+  for (const { U, lights } of linked) {
+    lights.forEach((l, i) => { U.uFacePos.value[i].copy(l.pos).applyMatrix4(V); U.uFaceDir.value[i].copy(l.toLight).transformDirection(V); });
+    U.uViewInv.value.copy(camera.matrixWorld);
+  }
+}
+function addLights(root) {
+  const byName = {}; root.traverse(o => { if (o.name) byName[o.name] = o; });
+  const meshesOf = name => { const o = byName[sanitize(name)]; const out = []; o && o.traverse(m => { if (m.isMesh) out.push(m); }); return out; };
+  const perMesh = new Map(); let global = 0, inMat = 0;
+  let blocker = null;
+  if (DATA.blocker) { const c = DATA.blocker; blocker = { min: [0, 1, 2].map(i => Math.min(...c.map(p => p[i]))), max: [0, 1, 2].map(i => Math.max(...c.map(p => p[i]))) }; }
+  for (const L of DATA.lights) {
+    const rec = L.receivers || [];
+    if (rec.length === 1 && rec[0] === 'Картуш') {           // cartouche: soft even light, no halo on the wall behind it
+      const col = new THREE.Color().setRGB(L.color[0], L.color[1], L.color[2], THREE.LinearSRGBColorSpace);
+      const E = L.energy / (4 * Math.PI) / (L.aim_dist * L.aim_dist) * Math.max(0.2, DATA.tune?.cartoucheCos ?? 0.76);
+      meshesOf('Картуш').forEach(m => { m.material.emissiveMap = m.material.map; m.material.emissive = col; m.material.emissiveIntensity = E / Math.PI * K; m.material.needsUpdate = true; });
+      inMat++; continue;
+    }
+    if (rec.length) {                                         // linked: goes into the receivers' own materials
+      const sp = spotParams(L);
+      for (const r of rec) for (const m of meshesOf(r)) { if (!perMesh.has(m)) perMesh.set(m, []); perMesh.get(m).push(sp); }
+      inMat++; continue;
+    }
+    const col = new THREE.Color().setRGB(L.color[0], L.color[1], L.color[2], THREE.LinearSRGBColorSpace);
+    let light;
+    if (L.type === 'SPOT') light = new THREE.SpotLight(col, L.energy / (4 * Math.PI) * K, 0, L.angle, Math.min(1, L.blend ?? 0.5), 2);
+    else if (L.type === 'POINT') light = new THREE.PointLight(col, L.energy / (4 * Math.PI) * K, 0, 2);
+    else if (L.type === 'AREA') light = new THREE.SpotLight(col, L.energy / Math.PI * K, 0, 1.25, 1, 2);
+    else if (L.type === 'SUN') light = new THREE.DirectionalLight(col, L.energy * K);
+    else continue;
+    light.position.set(...L.pos);
+    if (light.target) { light.target.position.set(...L.pos).addScaledVector(new THREE.Vector3(...L.dir), 5); scene.add(light.target); }
+    scene.add(light); global++;
+  }
+  const bgMeshes = new Set(meshesOf('Фон_сцена'));
+  for (const [m, lights] of perMesh) linkInto(m, lights, bgMeshes.has(m) ? blocker : null);
+  const amb = DATA.tune?.ambient ?? 0.02;
+  if (amb > 0) scene.add(new THREE.HemisphereLight(0xffe2c0, 0x2a2018, amb));
+  return { global, inMat };
+}
+
+// ---------- download scene files with byte-level progress, then rebuild the original GLB in memory
+const LAY = DATA.layout;
+const files = [...LAY.rest.files.map(f => ({ ...f, kind: 'b64' })), ...LAY.images.map(f => ({ ...f, kind: 'img' }))];
+const total = files.reduce((s, p) => s + p.size, 0);
+$('lTotal').textContent = MB(total);
+$('lTicks').innerHTML = Array.from({ length: 12 }, () => '<i></i>').join('');
+let got = 0, filesDone = 0; const t0 = performance.now();
+function showBytes() {
+  const pct = total ? got / total * 100 : 0;
+  $('lDone').textContent = MB(got); $('lLeft').textContent = MB(Math.max(0, total - got));
+  $('lPct').textContent = Math.floor(pct) + '%'; $('lFill').style.width = pct.toFixed(2) + '%'; $('lTrack').setAttribute('aria-valuenow', Math.floor(pct));
+  const s = (performance.now() - t0) / 1000;
+  if (s > 1 && got > 0) { const v = got / s; const eta = (total - got) / v; $('lSpeed').textContent = `${MB(v)} МБ/с · ещё ≈ ${eta < 60 ? Math.ceil(eta) + ' с' : Math.ceil(eta / 60) + ' мин'}`; }
+  $('stDl').textContent = `${filesDone} из ${files.length}`;
+}
+async function fetchBytes(f) {
+  const res = await fetch(f.url);
+  if (!res.ok) throw new Error(`HTTP ${res.status} (${f.url})`);
+  const out = new Uint8Array(f.size); let at = 0; const reader = res.body.getReader();
+  for (;;) { const { done, value } = await reader.read(); if (done) break;
+    if (at + value.length > out.length) throw new Error('размер файла не совпал (' + f.url + ')');
+    out.set(value, at); at += value.length; got += value.length; showBytes(); }
+  filesDone++; showBytes(); return out.subarray(0, at);
+}
+async function download() {
+  step('dl', 'now'); showBytes();
+  const glb = new Uint8Array(LAY.total); const b64 = new Array(LAY.rest.files.length);
+  let next = 0;
+  async function worker() {
+    while (next < files.length) {
+      const f = files[next++]; const bytes = await fetchBytes(f);
+      if (f.kind === 'img') glb.set(bytes, f.offset);
+      else b64[LAY.rest.files.indexOf(LAY.rest.files.find(r => r.url === f.url))] = bytes;
+    }
+  }
+  await Promise.all([worker(), worker(), worker(), worker()]);
+  // base64 text -> geometry bytes, placed back into their original ranges
+  const dec = new TextDecoder('ascii'); let pos = 0; const rest = new Uint8Array(LAY.rest.bytes);
+  for (const part of b64) { const bin = atob(dec.decode(part)); for (let i = 0; i < bin.length; i++) rest[pos + i] = bin.charCodeAt(i); pos += bin.length; }
+  let r = 0; for (const [off, len] of LAY.rest.ranges) { glb.set(rest.subarray(r, r + len), off); r += len; }
+  step('dl', 'ok'); return glb.buffer;
+}
+
+// ---------- parse with decode progress
+function parse(buffer, type) {
+  const draco = new DRACOLoader(); draco.setDecoderPath('./draco/'); draco.setDecoderConfig({ type }); draco.setWorkerLimit(Math.max(2, Math.min(6, (navigator.hardwareConcurrency || 4) - 1)));
+  let gTot = DATA.stats.meshes, gDone = 0, tTot = DATA.stats.images, tDone = 0;
+  const upd = () => { $('stGeo').textContent = `${gDone} из ${gTot}`; $('stTex').textContent = `${tDone} из ${tTot}`; };
+  const orig = draco.decodeDracoFile.bind(draco);
+  draco.decodeDracoFile = (buf, cb, ...rest) => orig(buf, g => { gDone++; upd(); if (gDone >= gTot) { step('geo', 'ok'); step('tex', tDone >= tTot ? 'ok' : 'now'); } cb(g); }, ...rest);
+  const loader = new GLTFLoader(); loader.setDRACOLoader(draco);
+  loader.register(parser => {
+    const tl = new THREE.TextureLoader(parser.options.manager); const load = tl.load.bind(tl);
+    tl.load = (url, onLoad, onProg, onErr) => load(url, t => { tDone++; upd(); if (tDone >= tTot) step('tex', 'ok'); onLoad && onLoad(t); }, onProg, e => { tDone++; upd(); onErr && onErr(e); });
+    parser.textureLoader = tl; return { name: 'IMG_TEXTURES_WITH_PROGRESS' };
+  });
+  step('geo', 'now'); step('tex', 'now'); upd();
+  return [draco, new Promise((res, rej) => loader.parse(buffer, './', res, rej))];
+}
+async function load() {
+  const buf = await download();
+  for (const type of ['wasm', 'js']) {
+    const [draco, p] = parse(buf.slice(0), type);
+    try {
+      const ok = await Promise.race([(draco.preload(), Promise.resolve(draco.decoderPending)).then(() => true, () => false), new Promise(r => setTimeout(() => r(false), 10000))]);
+      if (!ok && type === 'wasm') continue;
+      return await p;
+    } catch (e) { if (type === 'js') throw e; }
+  }
+}
+
+load().then(async gltf => {
+  const root = gltf.scene; let tris = 0, meshes = 0;
+  root.traverse(o => {
+    if (!o.isMesh) return;
+    meshes++; tris += o.geometry.index ? o.geometry.index.count / 3 : o.geometry.attributes.position.count / 3;
+    const src = o.material; if (src.map) src.map.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
+    o.material = new THREE.MeshStandardMaterial({ map: src.map, normalMap: src.normalMap || null, roughness: src.roughness ?? 0.9, metalness: src.metalness ?? 0,
+      roughnessMap: src.roughnessMap || null, metalnessMap: src.metalnessMap || null, side: src.side, name: src.name });
+    if (src.normalMap && src.normalScale) o.material.normalScale.copy(src.normalScale);
+  });
+  scene.add(root);
+  step('gpu', 'now'); $('stGpu').textContent = 'свет';
+  const nl = addLights(root);
+  $('stGpu').textContent = plural(nl.global + nl.inMat, 'источник', 'источника', 'источников');
+  updateLinked();
+  await new Promise(r => requestAnimationFrame(r));
+  try { if (renderer.compileAsync) await renderer.compileAsync(scene, camera); } catch (e) { /* first frame compiles instead */ }
+  dirty = true; renderer.render(scene, camera); dirty = false;
+  step('gpu', 'ok');
+  $('sModels').textContent = DATA.stats.models.toLocaleString('ru-RU');
+  $('sTris').textContent = (Math.round(tris / 1e5) / 10).toLocaleString('ru-RU') + ' млн';
+  $('sTex').textContent = `${DATA.stats.images} × 2560 px`;
+  $('sSize').textContent = MB(DATA.stats.glb) + ' МБ';
+  $('plate').hidden = false; $('bar').hidden = false;
+  $('loader').classList.add('done');
+}).catch(e => {
+  console.error(e);
+  const m = String((e && (e.message || (e.error && e.error.message))) || (e && e.type) || e);
+  fail(/HTTP 40[13]/.test(m)
+    ? 'Браузер не пустил загрузку файлов сцены (' + m + '). Так бывает, когда браузер блокирует сторонние cookie, например Яндекс.Браузер. Откройте ссылку в приложении Claude, в Chrome или Safari.'
+    : 'Сцену не удалось загрузить: ' + m + '. Обновите страницу; если ошибка повторится, откройте ссылку в другом браузере.');
+});
+
+// ---------- views and render loop (renders only when something changes)
+let tween = null;
+function go(v, ms = 1100) {
+  const p0 = camera.position.clone(), t0v = controls.target.clone(), start = performance.now();
+  tween = () => { const k = Math.min(1, (performance.now() - start) / ms), e = 1 - Math.pow(1 - k, 3);
+    camera.position.lerpVectors(p0, v.pos, e); controls.target.lerpVectors(t0v, v.tgt, e); dirty = true; if (k >= 1) tween = null; };
+}
+$('vHome').onclick = () => { setOrbit(false); go(home); };
+const ob = $('vOrbit');
+function setOrbit(on) { controls.autoRotate = on; ob.setAttribute('aria-pressed', String(on)); }
+ob.onclick = () => setOrbit(!controls.autoRotate);
+controls.addEventListener('start', () => { tween = null; });
+renderer.setAnimationLoop(() => {
+  if (tween) tween();
+  controls.update();
+  if (controls.autoRotate) dirty = true;
+  if (dirty && $('loader').classList.contains('done')) { updateLinked(); renderer.render(scene, camera); dirty = false; }
+});
+</script>
